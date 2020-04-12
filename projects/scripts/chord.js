@@ -1,5 +1,5 @@
-var SCREEN_W = 800,
-	SCREEN_H = 800;
+var W = 400,
+	H = 400;
 	
 var totalDist = 0;
 var i = 1;
@@ -13,7 +13,7 @@ function createPoint() {
 }
 	
 function setup() {
-	createCanvas(SCREEN_W, SCREEN_H);
+	createCanvas(W, H);
 	
 	ellipseMode(RADIUS);
 	angleMode(DEGREES);
@@ -32,7 +32,7 @@ function settingsOther() {
 
 function draw() {
 	background(51);
-	translate(SCREEN_W/2, SCREEN_H/2);
+	translate(W/2, H/2);
 	
 	settingsCircle();
 	ellipse(0, 0, 100);
