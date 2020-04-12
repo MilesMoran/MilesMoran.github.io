@@ -12,7 +12,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Check this out!
 
-[Projects](/projects/index.md)
+[Projects](/projects/index.html)
 
 ### Markdown
 
