@@ -1,3 +1,9 @@
+---
+layout: default
+title: Miles Moran
+description: a boy's first website
+---
+
 ## Welcome to Miles' Page!
 
 You can use the [editor on GitHub](https://github.com/MilesMoran/MilesMoran.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.

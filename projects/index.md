@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Miles' Projects
+description: check out this thing
 ---
 
 	## Projects
