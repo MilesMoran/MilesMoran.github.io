@@ -4,7 +4,16 @@ layout: default
 
 # About
 
-You can optionally insert a brief bio here. You went to this school, you studied that, you now work in this field with research interests in that subject. At your previous position at this place, you worked on this or that. You can list some of your significant accomplishments, awards, or recognition here as well. You live in this city with these animals and people. In your free time you like X, Y, and Z.
+I'm Miles Moran! I was born and raised in Henderson, Nevada 
+
+I currently attend the University of Nevada, Reno and expect to graduate May 2020 with a BSc in Applied Mathematics and a minor in Data Science. After a gap year, I'll be applying to graduate programs in Statistics. 
+
+My research interests include statistical learning, pattern recognition, and mathematical modeling.
+
+I've also got two adorable pet ferrets!
+
+![Pabu and Naga](/assets/images/ferrets.JPG)
+
 
 contacts:
 - [email me](mailto:MilesMoran2018@gmail.com)
