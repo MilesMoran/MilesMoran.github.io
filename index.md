@@ -8,7 +8,7 @@ description: a boy's first website
 
 ### Here are some pages!
 
-[About](/projects/about.html)
-[Miscellaneous](/projects/misc.html)
-[Resume](/projects/resume.html)
+[About](/pages/about.html)
+[Miscellaneous](/pages/misc.html)
+[Resume](/pages/resume.html)
 [Projects](/pages/projects.html)
