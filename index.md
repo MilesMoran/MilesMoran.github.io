@@ -13,7 +13,3 @@ My research interests include statistical learning, pattern recognition, and mat
 I've also got two adorable pet ferrets!
 
 ![Pabu and Naga](/assets/images/ferrets.JPG)
-
-
-contacts:
-- [email me](mailto:MilesMoran2018@gmail.com)
