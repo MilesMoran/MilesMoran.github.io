@@ -4,17 +4,13 @@ layout: default
 
 # Data Science in 5 Minutes
 
+Suppose I take a survey of 100 men, measuring (1) their risk of heart disease and (2) several related health variables (including age, height and weight). The results of this survey might look something like this: 
+
+![image](../assets/images/table1.png)
+
 Let's assume we have some kind of data that can be defined in terms of a Relational Database. This means that our data comes in a format comprised of observations (also called samples), and each 
 observation contains a set of measurements (numbers, text, etc.) representing attributes that ALL\* observations have in common. An example might be as such: 
 
-| Students in Mr. Moran's Survey			   						|
-| Observation	| Name  | Age | Height 	| Pronouns	| Weight (lbs)	|
-|:--------------|:------|:----|:--------|:----------|:--------------|
-| 1           	| Adam 	| 19  | 5'10"  	| he/him	| 160			|
-| 2 			| Sam   | 21  | 6'2"	| he/him	| 210			|
-| 3           	| Helen | 20  | 5'4"	| she/her	| 100			|
-| 4           	| Wei 	| 20  | 5'9"	| he/him	| 140			|
-| 5				| Alex 	| 19  | 5'5		| they/them | 120			|
 
 IN this case, we have _five_ observations, representing the _five_ people in the class. Each person (observation) has _four_ attributes, including their name, age, height, and pronouns. The first thing we will do in our analysis is *clean* the data by translating it into numbers only :
 
