@@ -6,7 +6,7 @@ layout: default
 
 Suppose I take a survey of 100 men, measuring (1) their risk of heart disease and (2) several related health variables (including age, height and weight). The results of this survey might look something like this: 
 
-![image](../assets/images/table1.png)
+![image](../assets/images/table2.png)
 
 Let's assume we have some kind of data that can be defined in terms of a Relational Database. This means that our data comes in a format comprised of observations (also called samples), and each 
 observation contains a set of measurements (numbers, text, etc.) representing attributes that ALL\* observations have in common. An example might be as such: 
