@@ -6,26 +6,18 @@ layout: default
 
 Suppose I take a survey of 100 men, measuring (1) their risk of heart disease and (2) several related health variables (including age, height and weight). The results of this survey might look something like this: 
 
-![image](../assets/images/table2.png)
+![image](../assets/images/datasci/table1.png)
 
-Let's assume we have some kind of data that can be defined in terms of a Relational Database. This means that our data comes in a format comprised of observations (also called samples), and each 
-observation contains a set of measurements (numbers, text, etc.) representing attributes that ALL\* observations have in common. An example might be as such: 
+In this case, our data is defined in terms of a _Relational_ _Database_. This means our data can be visualized like an excel spreadsheet, wherein each row corresponds to some observation (also called a 'sample') and each column corresponds to some measurement (also called an 'attribute' or 'feature') of those observations. Note:
 
+1. Each observation has had the _same_ attributes measured (age, height, weight, at risk), meaning our data has no _sparsity_. Generally, extrapolating meaningful information from _sparse_ data is more difficult than from non-sparse data. 
 
-IN this case, we have _five_ observations, representing the _five_ people in the class. Each person (observation) has _four_ attributes, including their name, age, height, and pronouns. The first thing we will do in our analysis is *clean* the data by translating it into numbers only :
+2. All of our measurements are numerical. Even the text-based 'yes' and 'no' measurements that fill up the 'risk factor' category can be thought of as 1's and 0's, respectively. What this will allow us to do is perform normal mathematical operations (addition, subtraction, etc.) on our data. 
 
-| Students in Mr. Moran's Survey			   						|
-| Observation	| Age	| Height | Pronouns he/him?	| Weight (lbs)	|
-|:--------------|:------|:-------|:-----------------|:--------------|
-| 1 (Adam)      | 19  	| 70" 	 | 1 				| 160			|
-| 2 (Sam)		| 21  	| 74" 	 | 1 				| 210			|
-| 3 (Helen)     | 20  	| 64" 	 | 0 				| 100			|
-| 4 (Wei)       | 20  	| 69" 	 | 1 				| 140			|
-| 5	(Alex)		| 19  	| 65" 	 | 0 				| 120			|
+Typically in data science, we perform serious computation when data is in this so-called _Matrix_ form. In fact, allow us to refer to our whole dataset as a mathematical variable like $x$ or $y$. Let's call this matrix $A$.
 
-What this will allow us to do is perform normal mathematical operations (addition, subtraction, etc.) on our data. Typically in data science, we perform serious computation when data is in this so-called _Matrix_ form. In fact, allow us to refer to our whole dataset as a mathematical variable like $x$ or $y$. Let's call this matrix $A$.
+![image](../assets/images/datasci/latex1.png)
 
-$ A = x^2 + y^2 $
 
 With this data, we might have a particular *goal* in mind. Suppose our objective is to guess whether or not a person's pronouns are he/him based on nothing but their height and weight (don't ever do this in real life). Then, a natural way to do this is to plot some of our data 
 
