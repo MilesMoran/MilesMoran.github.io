@@ -4,35 +4,35 @@ layout: default
 
 # About
 
-I'm a Las Vegas native and currently a PhD Student in the Statistics Department at Oregon State University. 
+I'm a Las Vegas native and currently a PhD Student in the Statistics Department at Oregon State University. Previously, I studied at the University of Nevada, Reno, where I earned a BS in Applied Mathematics. 
 
 
-<table>
-<tr>
-<th> Research Interests </th>
-<th> Education </th>
-</tr>
-<tr>
-<td>
+* * *
 
-- Extreme Value Modeling
 
-- Spatial and Spatio-Temporal Modeling
+# Research
 
-- Applications of Statistics to Climate and Environmental Science
+My research interests include 
 
-</td>
-<td>
+-   Extreme Value Modeling
+-   Spatial and Spatio-Temporal Modeling
+-   Applications of Statistics to Climate and Environmental Science
 
-- PhD in Statistics (2023-current)
-    Oregon State University
 
-- MS in Statistics (2021-2023)
-    Oregon State University
+* * *
 
-- BS in Applied Mathematics (2017-2020)
-    University of Nevada, Reno
+# Teaching
 
-</td>
-</tr>
-</table>
+As a TA at Oregon State, I've taught labs and developed course materials for several of the applied classes our department offers. So far, these include  
+
+*   [INTRODUCTION TO STATISTICAL METHODS I](https://catalog.oregonstate.edu/search/?P=ST%20351)
+*   [INTRODUCTION TO STATISTICAL METHODS II](https://catalog.oregonstate.edu/search/?P=ST%20352)
+*   [METHODS OF DATA ANALYSIS I](https://catalog.oregonstate.edu/search/?P=ST%20511)
+*   [METHODS OF DATA ANALYSIS II](https://catalog.oregonstate.edu/search/?P=ST%20512)
+
+Starting in Fall of 2023, I'll be applying my knowledge as the primary Statistical Consultant for our department's [internal consulting service](https://stat.oregonstate.edu/services/statistical-consulting). 
+
+
+
+
+
