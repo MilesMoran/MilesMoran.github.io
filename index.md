@@ -4,7 +4,7 @@ layout: default
 
 <h1 id="About">About</h1>
 
-I'm a Las Vegas native and currently a PhD Student in the Statistics Department at Oregon State University. Previously, I studied at the University of Nevada, Reno, where I earned a BS in Applied Mathematics. 
+I'm a Las Vegas native and currently pursuing a PhD in Statistics at Oregon State University. Previously, I studied at the University of Nevada, Reno, where I earned a BS in Applied Mathematics. 
 
 
 * * *
