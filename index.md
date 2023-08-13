@@ -31,7 +31,7 @@ As a TA at Oregon State, I've taught labs and developed course materials for sev
 *   ST 511 - [METHODS OF DATA ANALYSIS I](https://catalog.oregonstate.edu/search/?P=ST%20511)
 *   ST 512 - [METHODS OF DATA ANALYSIS II](https://catalog.oregonstate.edu/search/?P=ST%20512) 
 
-Starting in Fall of 2023, I'll be applying my knowledge as the primary Statistical Consultant for our department's [internal consulting service](https://stat.oregonstate.edu/services/statistical-consulting). 
+Starting in Fall of 2023, I'll be applying my knowledge as a Statistical Consultant for our department's [internal consulting service](https://stat.oregonstate.edu/services/statistical-consulting). 
 
 
 
