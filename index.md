@@ -13,7 +13,6 @@ I'm a Las Vegas native and currently pursuing a PhD in Statistics at Oregon Stat
 <h1 id="Research">Research</h1>
 
 My research interests include 
-
 -   Extreme Value Modeling
 -   Spatial and Spatio-Temporal Modeling
 -   Applications of Statistics to Climate and Environmental Science
