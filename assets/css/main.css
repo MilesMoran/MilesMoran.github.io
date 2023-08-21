@@ -68,11 +68,11 @@ header ul li {
 
 }
 
-.container {
+container {
   display: flex;
   justify-content: center;
 }
-.center {
+center {
   width: 400px; 
   padding: 10px;
   background: #5F85DB;
