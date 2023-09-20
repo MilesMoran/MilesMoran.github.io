@@ -18,6 +18,7 @@ My research interests include
 -   Applications of Statistics to Climate and Environmental Science
 -   Interactive Data Visualization
 
+{% include youtube.html id="9JcoazqJtV0" %}
 
 * * *
 
