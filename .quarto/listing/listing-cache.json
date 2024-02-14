@@ -1,7 +1,7 @@
 {
   "listingMap": {
     "projects.qmd": [
-      "__listings/**"
+      "posts"
     ]
   }
 }

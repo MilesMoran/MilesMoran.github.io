@@ -7,5 +7,8 @@
   },
   "teaching.qmd": {
     "teaching.html": "89d96897"
+  },
+  "posts/projects/pcs-proj/index.qmd": {
+    "index.html": "345ddab0"
   }
 }
