@@ -1,7 +1,6 @@
 ---
-title: "Projects"
 listing:
-  contents: "__listings"
+  contents: "posts"
   sort: "date desc"
   type: grid
   date-format: iso
