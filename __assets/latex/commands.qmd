@@ -1,0 +1,152 @@
+<div class="hidden unnumbered unlisted">
+
+<!--#########################################################################-->
+<!--# General-Use Function ##################################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\newcommand{\func}[2]   { \mathrm{#1}\left(#2\right) }
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\end{equation}
+<!--#########################################################################-->
+<!--# Probability-Related Functions #########################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\renewcommand{\Pr}[1]   { \func{Pr}{#1}     }
+\newcommand{\Supp}[1]   { \func{Supp}{#1}   }
+
+\newcommand{\E}[1]      { \func{E}{#1}      }
+\newcommand{\Var}[1]    { \func{Var}{#1}    }
+\newcommand{\SD}[1]     { \func{SD}{#1}     }
+\newcommand{\SE}[1]     { \func{SE}{#1}     }
+\newcommand{\Cov}[1]    { \func{Cov}{#1}    }
+\newcommand{\Cor}[1]    { \func{Cor}{#1}    }
+\newcommand{\EEst}[1]   { \widehat{\mathrm{E}}\left(#1\right)    }
+\newcommand{\VarEst}[1] { \widehat{\mathrm{Var}}\left(#1\right)  }
+\newcommand{\CovEst}[1] { \widehat{\mathrm{Cov}}\left(#1\right)  }
+\newcommand{\CorEst}[1] { \widehat{\mathrm{Cor}}\left(#1\right)  }
+
+\end{equation}
+<!--#########################################################################-->
+<!--# Math-Related Functions ################################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\renewcommand{\ln}[1]   { \func{ln}{#1}             }
+\renewcommand{\log}[1]  { \func{log}{#1}            }
+\renewcommand{\exp}[1]  { \func{exp}{#1}            }
+\newcommand{\logit}[1]  { \func{logit}{#1}          }
+\newcommand{\logis}[1]  { \func{logistic}{#1}       }
+
+\renewcommand{\max}[2]  { \mathrm{max}_{#1}\left(#2\right)   }
+\renewcommand{\min}[2]  { \mathrm{min}_{#1}\left(#2\right)   }
+\newcommand{\argmax}[2] { \mathrm{argmax}_{#1}\left(#2\right)    }
+\newcommand{\argmin}[2] { \mathrm{argmin}_{#1}\left(#2\right)    }
+
+
+\newcommand{\abs}[1]  { \left|#1\right|    }
+\newcommand{\Indic}[1]  { \mathbb{1}\left\{#1\right\} }
+
+\end{equation}
+<!--#########################################################################-->
+<!--# Named Distributions ###################################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\newcommand{\Bernoulli}[1]  { \func{Bernoulli}{#1}      }
+\newcommand{\Bin}[1]        { \func{Binom}{#1}          }
+\newcommand{\Hypergeom}[1]  { \func{Hypergeom}{#1}      }
+\newcommand{\Geom}[1]       { \func{Geom}{#1}           }
+\newcommand{\NB}[1]         { \func{NB}{#1}             }
+\newcommand{\Pois}[1]       { \func{Pois}{#1}           }
+
+\newcommand{\Unif}[1]       { \func{Unif}{#1}           }
+\newcommand{\Normal}[1]     { \func{N}{#1}              }
+\newcommand{\LogNormal}[1]  { \func{Lognormal}{#1}      }
+\newcommand{\MVN}[1]        { \func{MVN}{#1}            }
+\renewcommand{\Beta}[1]     { \func{Beta}{#1}           }
+\renewcommand{\Gamma}[1]    { \func{Γ}{#1}              }
+\newcommand{\Exp}[1]        { \func{Exp}{#1}            }
+\newcommand{\Chisq}[1]      {  χ^{2}_{#1}    }
+
+\end{equation}
+<!--#########################################################################-->
+<!--# Special Characters ####################################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\newcommand{\pfrac}[2]  { \left(\frac{#1}{#2}\right)            }
+\newcommand{\bfrac}[2]  { \left[\frac{#1}{#2}\right]            }
+
+\newcommand{\nullsim}   { \overset{\small{$H_0$}}{\sim}  }
+\newcommand{\iid}       { \overset{\small\mathrm{iid}}{\sim}    }
+\newcommand{\defeq}     { \overset{\small\mathrm{def}}{=}       }
+
+\newcommand{\plim}      { \overset{p}{→}                        }
+\newcommand{\dlim}      { \overset{d}{→}                        }
+\newcommand{\aslim}     { \overset{\mathrm{a.s.}}{→}            }
+\newcommand{\reals}     { \mathbb{R}                            }
+
+\newcommand{\MLE}[1]    { \hat{#1}_{\mathrm{MLE}}               }
+\newcommand{\MoM}[1]    { \hat{#1}_{\mathrm{MoM}}               }
+
+\newcommand{\sbullet}   { \mathbin{\vcenter{\hbox{\scalebox{0.5}{$\bullet$}}}} }
+
+\newcommand{\T}         { \top }
+
+\end{equation}
+<!--#########################################################################-->
+<!--# Utility & Formatting ##################################################-->
+<!--#########################################################################-->
+\begin{equation}
+
+\newcommand{\separator} { \vspace{2mm} 
+                            \par\noindent\rule{\textwidth}{0.7pt} 
+                          \vspace{2mm}                          }
+\newcommand{\zzz}       { \vspace{-8mm}                         }
+
+% \let\bm\mathbf
+\let\bm\symbfup
+
+\newcommand{\Note}      { $\boxed{\textbf{Note}}$   }
+
+\end{equation}
+<!--#########################################################################-->
+<!--#########################################################################-->
+<!--#########################################################################-->
+
+<!--
+
+
+\def\bm#1{%
+  \mathchoice
+    {\bm@helper{\displaystyle}{#1}}%
+    {\bm@helper{\textstyle}{#1}}%
+    {\bm@helper{\scriptstyle}{#1}}%
+    {\bm@helper{\scriptscriptstyle}{#1}}%
+}
+
+\def\bm@helper#1#2{%
+  \begingroup
+    \boldmath
+    #1{%
+      \sbox\z@{$#2\m@th$}%
+      \setbox\tw@\null
+      \ht\tw@\ht\z@
+      \dp\tw@\dp\z@
+      \wd\tw@\wd\z@
+      \box\tw@
+    }%
+  \endgroup
+}
+
+\definecolor{codegrey}{HTML}{F3F3F3}
+\newcommand{\code}[1]   { \colorbox{codegrey}{\texttt{#1}} }
+
+
+-->
+
+</div>

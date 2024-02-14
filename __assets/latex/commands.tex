@@ -1,0 +1,133 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% General-Use Function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\func}[2]   { \ensuremath\mathrm{#1}\left(#2\right) }
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Probability-Related Functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\Pr}[1]   { \func{Pr}{#1}     }
+\newcommand{\Supp}[1]   { \func{Supp}{#1}   }
+
+\newcommand{\E}[1]      { \func{E}{#1}      }
+\newcommand{\Var}[1]    { \func{Var}{#1}    }
+\newcommand{\SD}[1]     { \func{SD}{#1}     }
+\newcommand{\SE}[1]     { \func{SE}{#1}     }
+\newcommand{\Cov}[1]    { \func{Cov}{#1}    }
+\newcommand{\Cor}[1]    { \func{Cor}{#1}    }
+\newcommand{\EEst}[1]   { \ensuremath\widehat{\mathrm{E}}\left(#1\right)    }
+\newcommand{\VarEst}[1] { \ensuremath\widehat{\mathrm{Var}}\left(#1\right)  }
+\newcommand{\CovEst}[1] { \ensuremath\widehat{\mathrm{Cov}}\left(#1\right)  }
+\newcommand{\CorEst}[1] { \ensuremath\widehat{\mathrm{Cor}}\left(#1\right)  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Statistics-Related Functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\SS}      { \ensuremath\mathrm{SS} }
+\newcommand{\MSE}[1][]  {
+    \ifthenelse { \equal{#1}{} }  
+        { \ensuremath\mathrm{MSE} }                     % if #1 is blank, use "MSE"
+        { \ensuremath\mathrm{MSE}\left(#1\right) }      % if #1 not blank, use "MSE(#1)"
+}
+\newcommand{\SSE}[1][]  {
+    \ifthenelse { \equal{#1}{} }  
+        { \ensuremath\mathrm{SSE} }                     % if #1 is blank, use "SSE"
+        { \ensuremath\mathrm{SSE}\left(#1\right) }      % if #1 not blank, use "SSE(#1)"
+}
+
+% \MSE{θ} prints "MSEθ"
+% \MSE[θ] prints "MSE(θ)"
+% \MSE[]  prints "MSE"
+% \MSE    prints "MSE"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Math-Related Functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\ln}[1]   { \func{ln}{#1}             }
+\renewcommand{\log}[1]  { \func{log}{#1}            }
+\renewcommand{\exp}[1]  { \func{exp}{#1}            }
+\newcommand{\logit}[1]  { \func{logit}{#1}          }
+\newcommand{\logis}[1]  { \func{logistic}{#1}       }
+
+\renewcommand{\max}[2]  { \ensuremath\mathrm{max}_{#1}\left(#2\right)   }
+\renewcommand{\min}[2]  { \ensuremath\mathrm{min}_{#1}\left(#2\right)   }
+\newcommand{\argmax}[2] { \ensuremath\mathrm{argmax}_{#1}\left(#2\right)    }
+\newcommand{\argmin}[2] { \ensuremath\mathrm{argmin}_{#1}\left(#2\right)    }
+
+
+\newcommand{\abs}[1]  { \ensuremath\left|#1\right|    }
+\newcommand{\Indic}[1]  { \ensuremath\mathbb{1}\left\{#1\right\} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Named Distributions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Bernoulli}[1]  { \func{Bernoulli}{#1}      }
+\newcommand{\Bin}[1]        { \func{Binom}{#1}          }
+\newcommand{\Hypergeom}[1]  { \func{Hypergeom}{#1}      }
+\newcommand{\Geom}[1]       { \func{Geom}{#1}           }
+\newcommand{\NB}[1]         { \func{NB}{#1}             }
+\newcommand{\Pois}[1]       { \func{Pois}{#1}           }
+
+\newcommand{\Unif}[1]       { \func{Unif}{#1}           }
+\newcommand{\Normal}[1]     { \func{N}{#1}              }
+\newcommand{\LogNormal}[1]  { \func{Lognormal}{#1}      }
+\newcommand{\MVN}[1]        { \func{MVN}{#1}            }
+\renewcommand{\Beta}[1]     { \func{Beta}{#1}           }
+\renewcommand{\Gamma}[1]    { \func{Γ}{#1}              }
+\newcommand{\Exp}[1]        { \func{Exp}{#1}            }
+\newcommand{\Chisq}[1]      { \ensuremath χ^{2}_{#1}    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Special Characters  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\pfrac}[2]  { \left(\frac{#1}{#2}\right)            }
+\newcommand{\bfrac}[2]  { \left[\frac{#1}{#2}\right]            }
+
+\newcommand{\nullsim}   { \overset{\small{$H_0$}}{\sim}  }
+\newcommand{\iid}       { \overset{\small\mathrm{iid}}{\sim}    }
+\newcommand{\defeq}     { \overset{\small\mathrm{def}}{=}       }
+
+\newcommand{\plim}      { \overset{p}{→}                        }
+\newcommand{\dlim}      { \overset{d}{→}                        }
+\newcommand{\aslim}     { \overset{\mathrm{a.s.}}{→}            }
+\newcommand{\reals}     { \mathbb{R}                            }
+
+\newcommand{\MLE}[1]    { \hat{#1}_{\mathrm{MLE}}               }
+\newcommand{\MoM}[1]    { \hat{#1}_{\mathrm{MoM}}               }
+
+\newcommand{\sbullet}   { \mathbin{\vcenter{\hbox{\scalebox{0.5}{$\bullet$}}}} }
+
+\newcommand{\T}         { \top }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Utility & Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\separator} { \vspace{2mm} 
+                            \par\noindent\rule{\textwidth}{0.7pt} 
+                          \vspace{2mm}                          }
+\newcommand{\zzz}       { \vspace{-8mm}                         }
+
+% \let\bm\mathbf
+\let\bm\symbf
+
+\newcommand{\Note}      { $\boxed{\textbf{Note}}$   }
+
+\definecolor{codegrey}{HTML}{F3F3F3}
+\newcommand{\code}[1]   { \colorbox{codegrey}{\texttt{#1}} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+

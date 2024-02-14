@@ -1,0 +1,79 @@
+---
+---
+
+<!--#########################################################################-->
+
+:::: {.columns}
+<!----------------------------------------------------------------------------->
+::: {.column width="30%"}
+
+  ![](__assets/images/headshot.png)
+
+::: {.p style="text-align:center"}
+  [Miles Moran]{.about_name}  
+  [PhD Student / Consultant / TA]{.about_subtext}  
+  [Oregon State University]{.about_subtext}
+:::
+
+::: 
+<!----------------------------------------------------------------------------->
+::: {.column width="10%"}
+  <!--empty column-->
+::: 
+<!----------------------------------------------------------------------------->
+::: {.column width="60%"}
+
+### Biography
+
+I'm a statistician by trade, currently pursuing a PhD and  Oregon State University. Under the supervision of Rob Trangucci and Lisa Madsen, our research involves the use of selection-model methodology to make spatio-temporal epidemiology models robust to MNAR data.
+
+I work as a statistical consultant for OSU grad students, which has really fueled my passion for effective communication/education in statistics. Consulting is one of my responsibilities as the teaching assistant for our department's consulting practicum course; but, I also get to advise other statisticians in their own consulting projects and develop course materials for them to use. 
+
+Although I like to clear my head by hiking or rock climbing, I spend a lot of my free time playing strategy games and building with LEGO. 
+
+:::
+<!----------------------------------------------------------------------------->
+::::
+
+***
+
+<!--#########################################################################-->
+
+:::: {.columns}
+<!----------------------------------------------------------------------------->
+::: {.column width="45%"}
+
+### Research Interests
+- Spatial/Spatio-Temporal Models
+- Extreme-Value Models
+- Statistics in Climate Science
+- Statistics in Epidemiology 
+- Interactive Data Visualization
+
+::: 
+<!----------------------------------------------------------------------------->
+::: {.column width="5%"}
+  <!--empty column-->
+::: 
+<!----------------------------------------------------------------------------->
+::: {.column width="45%"}
+
+### Education
+- PhD, Statistics (In Progress)  
+    [Oregon State University]{.about_subtext}
+- MS, Statistics (2023)  
+    [Oregon State University]{.about_subtext}
+- BS, Applied Mathematics (2020)  
+    [University of Nevada, Reno]{.about_subtext}
+
+:::
+<!----------------------------------------------------------------------------->
+::::
+
+<!--#########################################################################-->
+
+<!--
+As part of the Stats MS program at OSU, I completed a research project studying the use of Univariate Extreme Value Analysis in modeling Extreme Precipitation Data. The project has its a [github page](https://github.com/MilesMoran/MS-Project-Oregon-EPEs) and a recording of the presentation of this project to my committee is embedded below. 
+-->
+
+<!--- {% include youtube.html id="9JcoazqJtV0" %} --->

@@ -1,0 +1,60 @@
+################################################################################
+
+project:
+  type: website
+  output-dir: docs
+
+################################################################################
+
+website:
+  title: "Miles Moran" 
+  navbar:
+    left:
+      - text: "About"
+        href: index.qmd
+      - text: "Teaching"
+        file: teaching.qmd
+      - text: "Projects"
+        file: projects.qmd
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/miles-m-moran/
+      - icon: github
+        href: https://github.com/milesmoran
+      - icon: envelope-fill
+        href: mailto:miles.moran@oregonstate.edu
+  favicon: "__assets/images/icon.png"
+
+################################################################################
+
+format:
+  html:
+    theme: 
+      - flatly
+      - "__assets/css/boot-styles.scss"
+    css: "__assets/css/styles.css"
+    toc: true
+    monofont: "DejaVu Sans Mono"
+    monofontoptions: Scale=0.8
+    include-in-header:
+      - file: "__assets/latex/commands.qmd"
+
+highlight-style: "__assets/other/Miles-textmate.theme"
+code-block-bg: "#FAFAFA"
+
+callout-appearance: default
+callout-icon: false
+
+################################################################################
+
+# filters:
+  # - collapse-callout   # allows use of `collapse-callout` option
+  # - pseudocode         # allows use of pseudocode "language" in code chunk
+# THESE AREN'T WORKING RIGHT NOW. COME BACK LATER?
+# collapse-callout:
+#   tip: true
+#   note: true
+#   warning: true
+#   caution: true
+
+################################################################################
