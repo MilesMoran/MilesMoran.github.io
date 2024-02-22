@@ -50,6 +50,13 @@
 \newcommand{\abs}[1]  { \left|#1\right|    }
 \newcommand{\Indic}[1]  { \mathbb{1}\left\{#1\right\} }
 
+\newcommand{\rank}[1]   { \func{rank}   }
+\newcommand{\diag}[1]   { \func{diag}   }
+\newcommand{\tr}[1]     { \func{tr}     }
+\newcommand{\det}[1]    { \func{det}    }
+\newcommand{\dim}[1]    { \func{dim}    }
+
+
 \end{equation}
 <!--#########################################################################-->
 <!--# Named Distributions ###################################################-->
@@ -92,6 +99,10 @@
 
 \newcommand{\MLE}[1]    { \hat{#1}_{\mathrm{MLE}}               }
 \newcommand{\MoM}[1]    { \hat{#1}_{\mathrm{MoM}}               }
+\newcommand{\REML}[1]   { \hat{#1}_{\mathrm{REML}}              }
+\newcommand{\OLS}[1]    { \hat{#1}_{\mathrm{OLS}}               }
+\newcommand{\WLS}[1]    { \hat{#1}_{\mathrm{WLS}}               }
+\newcommand{\GLS}[1]    { \hat{#1}_{\mathrm{GLS}}               }
 
 \newcommand{\sbullet}   { \mathbin{\vcenter{\hbox{\scalebox{0.5}{$\bullet$}}}} }
 
@@ -112,6 +123,13 @@
 \let\bm\symbfup
 
 \newcommand{\Note}      { $\boxed{\textbf{Note}}$   }
+
+\newenvironment{alignBraced}{
+    \left\{\begin{aligned}
+}{
+    \end{aligned}\right\}
+}
+
 
 \end{equation}
 <!--#########################################################################-->

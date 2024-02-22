@@ -1,0 +1,22 @@
+---
+title: "Resources"
+---
+<!--#########################################################################-->
+
+### Linear (Fixed-Effects) Models ("LMs")
+
+#### Heteroskedasticity
+
+- Sims, Christopher. 2013. ["Eco517 Lecture Notes: Clustering, random effects, mixed models, sandwiches."](__resources/ClustersSndwches.pdf) 
+
+#### Autocorrelation 
+
+### Linear Mixed(-Effects) Models ("LMMs")
+
+### Generalized Linear Models ("GLMs")
+
+### Generalized Linear Mixed(-Effects) Models ("GLMMs")
+
+
+
+<!--#########################################################################-->
