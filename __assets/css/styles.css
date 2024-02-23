@@ -11,6 +11,21 @@
     color: grey;
 }
 
+
+/*** reduce spacing above & below display math ***/
+mjx-container[display="true"] {
+    margin: .5em 0 ! important;
+    margin-bottom: 0 !important;
+}
+.mjx-assistive-mml {
+    height: 0 !important;
+}
+
+/*** reduce spacing above markdown lists ***/
+ul {
+    margin-top: -10px;
+}
+
 /******************************************************************************
 
 .callout-example {
