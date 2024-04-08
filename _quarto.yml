@@ -38,16 +38,25 @@ format:
     toc: true
     monofont: "DejaVu Sans Mono"
     monofontoptions: Scale=0.8
+    html-math-method: "mathjax"
     include-in-header:
+      - file: "__assets/latex/mathjaxGreek.html"
       - file: "__assets/latex/commands.qmd"
+    
 
 highlight-style: "__assets/other/Miles-textmate.theme"
 code-block-bg: "#FAFAFA"
+code-block-border-left: "#81B29A"
 
 callout-appearance: default
 callout-icon: false
 
 ################################################################################
+
+# filters: 
+# - webr
+# webr:
+# - packages: ['tidyverse', 'magrittr'] # Install R packages on document open
 
 # filters:
   # - collapse-callout   # allows use of `collapse-callout` option

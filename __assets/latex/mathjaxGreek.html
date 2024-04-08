@@ -1,0 +1,74 @@
+<!-- 
+    This script was created by Davide Cervone in response to my post in the MathJax user forum
+    (see https://groups.google.com/g/mathjax-users/c/ZnZ_hGPwioo/m/6f32WVPxAQAJ)
+    in hopes of re-defining the \symbf{} command to behave more like the original \symbf{}
+    provided in the Unicode-Math package. 
+-->
+<!--
+<script>
+MathJax = {
+  tex: {packages: {'[+]': ['my-sym']}},
+  startup: {
+    ready() {
+      const {Configuration} = MathJax._.input.tex.Configuration;
+      const {CommandMap} = MathJax._.input.tex.TokenMap;
+      const {MapHandler} = MathJax._.input.tex.MapHandler;
+      const {TexConstant} = MathJax._.input.tex.TexConstants;
+      const TexParser = MathJax._.input.tex.TexParser.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const NodeUtil = MathJax._.input.tex.NodeUtil.default;
+      const {getRange} = MathJax._.core.MmlTree.OperatorDictionary;
+      const MATHVARIANT = TexConstant.Variant;
+      
+      function Other(parser, char) {
+        const font = parser.stack.env['font'];
+        const ifont = parser.stack.env['italicFont'];
+        let def = font ? {mathvariant: font} : {};
+        const remap = MapHandler.getMap('remap').lookup(char);
+        const range = getRange(char);
+        const type = range[3]
+        let mo = parser.create('token', type, def, (remap ? remap.char : char));
+        const style = (ParseUtil.isLatinOrGreekChar(char) ? parser.configuration.mathStyle(char, true) || ifont : '');
+        const variant = (range[4] || (font && style === MATHVARIANT.NORMAL? '' : style));
+        if (variant) {
+          mo.attributes.set('mathvariant', variant);
+        }
+        if (type === 'mo') {
+          NodeUtil.setProperty(mo, 'fixStretchy', true);
+          parser.configuration.addNode('fixStretchy', mo);
+        }
+        parser.Push(mo);
+      }
+      
+      new CommandMap('my-sym', {
+        symbf: ['MathFont', MATHVARIANT.BOLD, MATHVARIANT.BOLDITALIC],
+        symsf: ['MathFont', MATHVARIANT.SANSSERIF, MATHVARIANT.SANSSERIFITALIC]
+      }, {
+        MathFont(parser, name, variant, italic) {
+          const text = parser.GetArgument(name);
+          let mml = new TexParser(text, {
+            multiLetterIdentifiers: parser.options.identifierPattern,
+            ...parser.stack.env,
+            font: variant,
+            italicFont: italic,
+            noAutoOP: true
+          }, parser.configuration).mml();
+          parser.Push(parser.create('node', 'TeXAtom', [mml]));
+        }
+      });
+      
+      Configuration.create('my-sym', {
+        handler: {
+          macro: ['my-sym']
+        },
+        fallback: {
+          character: Other
+        }
+      });
+      
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+-->
