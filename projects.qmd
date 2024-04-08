@@ -1,17 +1,28 @@
 ---
-listing:
-  contents: "posts"
-  sort: "date desc"
-  type: grid
-  date-format: iso
-  fields: [image, date, title, description, categories]
-  categories: unnumbered
-  max-description-length: 175
-  sort-ui: false
-  filter-ui: false
+title: "Projects"
+
 format: 
   html:
     page-layout: article
-title-block-banner: true
+    # css: "__assets/css/styles-resources.css"
+    # toc: false
+
+listing:
+  id: projects
+  type: grid
+  contents: "posts/projects/pcs-proj/*.qmd"
+  # template: "__assets/js/listing_resources.ejs"
+  sort: "date desc"
+  fields: [image, date, title, description, categories]
+  categories: unnumbered
+  date-format: iso
 ---
 
+<!--#########################################################################-->
+
+---
+
+::: {#projects}
+:::
+
+<!--#########################################################################-->

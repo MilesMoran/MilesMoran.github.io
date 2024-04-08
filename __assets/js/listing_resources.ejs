@@ -1,0 +1,163 @@
+```{=html}
+<!--#########################################################################-->
+
+<!-- Server-side script to generate the list of all (unique) categories -->
+<%
+let all_categories = [];
+for(item of items) {
+    for(category of item.categories) {
+        if (!all_categories.includes(category)) {
+            all_categories.push(category);
+        }
+    }
+}
+all_categories = all_categories.sort();
+%>
+
+<!-- <span class="resource-categories listing-categories">
+    <% for (const category of all_categories) { %>
+    <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
+        <%= category %>
+    </div>
+    <% } %>
+</span>
+
+<span class="resource-categories listing-categories" style="float:right;">
+    <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
+        RESET
+    </div>
+</span> -->
+
+<br />
+<hr> <!--####################################################################-->
+
+<ul class="pub-list list">
+<% for (const item of items) { %>
+<div class="li2" "li" <%= metadataAttrs(item) %> data-categories="<%= item.categories.join(', ') %>">
+
+    <img class="resource-icon" src="<%= item.image %>" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            <%= item.author %>,&nbsp;
+        </span>
+        <a class="resource-title" href="<%- item.path %>" target="_blank" rel="noopener noreferrer">
+            <%= item.title %>
+        </a>
+
+        <br /> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            <% for (const category of item.categories) { %>
+            <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
+                <%= category %>
+            </div>
+            <% } %>
+        </span>
+    </div>
+
+</div>
+<% } %>
+</ul>
+
+<!--#########################################################################-->
+
+<script>
+    // Global variable to store current categories
+    var currentCategories = [];
+    
+    function getCurrentCategories() {
+        return currentCategories;
+    }
+    
+    function manageCategorySelection(category) {
+        if (category === 'RESET') {
+            currentCategories = []; // Reset categories
+        } else {
+            const index = currentCategories.indexOf(category);
+            if (index > -1) {
+                currentCategories.splice(index, 1); // Remove category if already selected
+            } else {
+                currentCategories.push(category); // Add category if not already selected
+            }
+        }
+    
+        // Update UI based on the new state of currentCategories
+        highlightCurrentCategories();
+        filterItemsByCategories();
+    }
+    
+    function highlightCurrentCategories() {
+        document.querySelectorAll('.listing-category').forEach(div => {
+            if (currentCategories.includes(div.innerText)) {
+                div.classList.add('category-highlighted');
+            } else {
+                div.classList.remove('category-highlighted');
+            }
+        });
+    }
+    
+    function filterItemsByCategories() {
+        document.querySelectorAll('.li2').forEach(item => {
+            const itemCategories = item.getAttribute('data-categories').split(',');
+            var isMatch = true; // Assume it's a match initially
+            if (currentCategories.length > 0) {
+                for (var i = 0; i < currentCategories.length; i++) {
+                    if (!itemCategories.includes(currentCategories[i])) {
+                        isMatch = false; // If any category is not included, it's not a match
+                        break; // No need to check further
+                    }
+                }
+            }
+            item.style.display = isMatch ? '' : 'none';
+        });
+    }
+    
+    // Initialize page state
+    document.addEventListener("DOMContentLoaded", () => {
+        highlightCurrentCategories();
+        filterItemsByCategories();
+    });
+    
+</script>
+
+<!--#########################################################################-->
+
+<script>
+
+    const ALL_CATEGORIES = {
+        "Model":    ["LMs", "LMMs", "GLMs", "GLMMs", "GAMs"], 
+        "Length":   ["Quick-Read"], 
+        "Language": ["R", "SAS"],
+        "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial"],
+        "Other":    []
+    };
+
+    var margin = document.getElementById("quarto-margin-sidebar");
+    margin.innerHTML = `
+        <h4>Filter Your Results:</h4>
+        <span class="resource-categories listing-categories" style="float:right;">
+            <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
+                RESET
+            </div>
+        </span>
+    `
+    
+    for (const [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
+        margin.innerHTML += 
+            "<h5>" + CLASS + "</h5>" + 
+            "<span class='resource-categories listing-categories'>" + 
+            CATEGORIES.map((CAT) => 
+                "<div class='resource-category listing-category' onclick='manageCategorySelection(\"" + CAT + "\");'>" + 
+                    CAT + 
+                "</div>"     
+            ).join('\n') + 
+            "</span>"
+    } 
+
+
+           
+</script>  
+```

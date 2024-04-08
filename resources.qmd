@@ -1,22 +1,31 @@
 ---
 title: "Resources"
+
+format: 
+  html:
+    page-layout: full
+    css: "__assets/css/styles-resources.css"
+    toc: false
+    
+listing:
+  id: resources 
+  type: default
+  contents: "resources.yml"
+  template: "__assets/js/listing_resources.ejs"
+  sort: "description desc"
+  fields: [image, title, description, author, categories]
+  categories: unnumbered
 ---
+
 <!--#########################################################################-->
 
-### Linear (Fixed-Effects) Models ("LMs")
+The following is a curated list of resources I often recommend to our consulting clients. Choose from the categories below to narrow your search:
 
-#### Heteroskedasticity
+---
 
-- Sims, Christopher. 2013. ["Eco517 Lecture Notes: Clustering, random effects, mixed models, sandwiches."](__resources/ClustersSndwches.pdf) 
+Categories:
 
-#### Autocorrelation 
-
-### Linear Mixed(-Effects) Models ("LMMs")
-
-### Generalized Linear Models ("GLMs")
-
-### Generalized Linear Mixed(-Effects) Models ("GLMMs")
-
-
+::: {#resources}
+:::
 
 <!--#########################################################################-->

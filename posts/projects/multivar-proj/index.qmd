@@ -1,0 +1,59 @@
+---
+title: "Contextualizing Multivariate Analysis With Wine"
+date: "2021-12-08"
+image: grf.png
+description: "How do researchers compare groups with multiple response variables?"
+bibliography: "multivar.bib"
+nocite: "@*" 
+code-fold: false
+execute:
+  eval: false
+categories: [R, Simulation, Computation, Data Visualization]
+---
+<!--#########################################################################-->
+<!--
+UPRIGHT: \mathbf = \symbf = \bf 
+ITALICS: \symbfit = \boldsymbol
+-->
+
+![](grf.png)
+
+```{r setup, eval=TRUE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, 
+                      warning = FALSE, cache = FALSE,
+                      fig.align = "center", out.width="75%")
+# options(width=85)
+
+library(knitr)
+library(kableExtra)
+
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+
+# library(tidyverse)
+# library(magrittr)
+# library(ggfortify)
+
+# update_geom_defaults("bar", list(color="black", fill="grey"))
+# update_geom_defaults("line", list(lwd=1))
+```
+
+<!--#########################################################################-->
+
+## Motivation
+
+<!--#########################################################################-->
+
+## Methods
+
+<!--#########################################################################-->
+
+## Simulation
+
+<!--#########################################################################-->
+
+## Discussion 
+
+<!--#########################################################################-->

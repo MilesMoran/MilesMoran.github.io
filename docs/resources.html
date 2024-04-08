@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Miles Moran - Projects</title>
+<title>Miles Moran - Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,20 +72,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-projects .list');
+    const listingTargetEl = window.document.querySelector('#listing-resources .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-author','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-image","listing-title","listing-description","listing-author","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
+    window['quarto-listings']['listing-resources'] = new List('listing-resources', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -469,6 +469,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="__assets/css/styles.css">
+<link rel="stylesheet" href="__assets/css/styles-resources.css">
 
 
 
@@ -497,11 +498,11 @@ window.Quarto = {
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="./projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link active" href="./resources.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -529,23 +530,22 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Computation">Computation</div><div class="category" data-category="Data Visualization">Data Visualization</div><div class="category" data-category="R">R</div><div class="category" data-category="Simulation">Simulation</div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Autocorrelation">Autocorrelation</div><div class="category" data-category="Contrasts">Contrasts</div><div class="category" data-category="Data Viz">Data Viz</div><div class="category" data-category="DoE">DoE</div><div class="category" data-category="Heteroskedasticity">Heteroskedasticity</div><div class="category" data-category="LMMs">LMMs</div><div class="category" data-category="Multiple Comparisons">Multiple Comparisons</div><div class="category" data-category="Power Analysis">Power Analysis</div><div class="category" data-category="Quick-Read">Quick-Read</div><div class="category" data-category="R">R</div><div class="category" data-category="SAS">SAS</div><div class="category" data-category="Spatial">Spatial</div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Resources</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -558,46 +558,495 @@ window.Quarto = {
 
 
 <!--#########################################################################-->
+<p>The following is a curated list of resources I often recommend to our consulting clients. Choose from the categories below to narrow your search:</p>
 <hr>
-<div id="listing-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R,Simulation,Computation,Data Visualization" data-listing-date-sort="1670400000000" data-listing-file-modified-sort="1707857727014" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2030">
-<a href="./posts/projects/pcs-proj/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/projects/pcs-proj/grf.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Generating Random Fields
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+<p>Categories:</p>
+<div id="listing-resources" class="quarto-listing quarto-listing-container-custom">
+<!--#########################################################################-->
+
+<!-- Server-side script to generate the list of all (unique) categories -->
+
+<!-- <span class="resource-categories listing-categories">
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
+        Autocorrelation
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Contrasts');">
+        Contrasts
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Data Viz');">
+        Data Viz
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('DoE');">
+        DoE
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Heteroskedasticity');">
+        Heteroskedasticity
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('LMMs');">
+        LMMs
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Multiple Comparisons');">
+        Multiple Comparisons
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Power Analysis');">
+        Power Analysis
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Quick-Read');">
+        Quick-Read
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+        R
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('SAS');">
+        SAS
+    </div>
+    
+    <div class="resource-category listing-category" onclick="manageCategorySelection('Spatial');">
+        Spatial
+    </div>
+    
+</span>
+
+<span class="resource-categories listing-categories" style="float:right;">
+    <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
+        RESET
+    </div>
+</span> -->
+
+<br>
+<hr> <!--####################################################################-->
+
+<ul class="pub-list list">
+
+<div class="li2" "li"="" data-index="0" data-categories="Heteroskedasticity,Autocorrelation,LMMs,R,SAS">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-LMMIntro.pdf" target="_blank" rel="noopener noreferrer">
+            An Intro to LMMs in R and SAS
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Heteroskedasticity');">
+                Heteroskedasticity
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
+                Autocorrelation
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('LMMs');">
+                LMMs
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('SAS');">
+                SAS
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Simulation'); return false;">
-Simulation
+
+<div class="li2" "li"="" data-index="1" data-categories="Data Viz,R">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-RGraphicsIntro1.pdf" target="_blank" rel="noopener noreferrer">
+            An Intro to R Graphics, Part I: Base Graphics
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Data Viz');">
+                Data Viz
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Computation'); return false;">
-Computation
+
+<div class="li2" "li"="" data-index="2" data-categories="Data Viz,R">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-RGraphicsIntro2.pdf" target="_blank" rel="noopener noreferrer">
+            An Intro to R Graphics, Part II: ggplot2
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Data Viz');">
+                Data Viz
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
+
+<div class="li2" "li"="" data-index="3" data-categories="DoE,Contrasts,R">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-FactorsInR.pdf" target="_blank" rel="noopener noreferrer">
+            Working with Factors in R: Model Parameterizations, Contrasts, Inferences on Means, etc.
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('DoE');">
+                DoE
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Contrasts');">
+                Contrasts
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+        </span>
+    </div>
+
 </div>
+
+<div class="li2" "li"="" data-index="4" data-categories="DoE,Contrasts,Multiple Comparisons,R">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-FactorsInR.pdf" target="_blank" rel="noopener noreferrer">
+            Multiple Comparisons &amp; Simultaneous Inference
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('DoE');">
+                DoE
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Contrasts');">
+                Contrasts
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Multiple Comparisons');">
+                Multiple Comparisons
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-<div class="card-text listing-description">
-How do researchers generate high-dimensional normal variates for use in simulation studies?
+
+<div class="li2" "li"="" data-index="5" data-categories="DoE,Contrasts,Multiple Comparisons,Power Analysis,R">
+
+    <img class="resource-icon" src="posts/resources/icons/UGA.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Dan Hall,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/UGA-Hall-PowerTalk.pdf" target="_blank" rel="noopener noreferrer">
+            Power Analysis and Sample Size Determination
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('DoE');">
+                DoE
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Contrasts');">
+                Contrasts
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Multiple Comparisons');">
+                Multiple Comparisons
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Power Analysis');">
+                Power Analysis
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-2022-12-07
+
+<div class="li2" "li"="" data-index="6" data-categories="Autocorrelation,Quick-Read">
+
+    <img class="resource-icon" src="posts/resources/icons/Stanford.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Kristin Sainani,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/Stanford-Sainani-CorrelationBrief.pdf" target="_blank" rel="noopener noreferrer">
+            The Importance of Accounting for Correlated Observations
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
+                Autocorrelation
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Quick-Read');">
+                Quick-Read
+            </div>
+            
+        </span>
+    </div>
+
 </div>
+
+<div class="li2" "li"="" data-index="7" data-categories="Heteroskedasticity,Autocorrelation,LMMs">
+
+    <img class="resource-icon" src="posts/resources/icons/Princeton.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Christopher Sims,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/Princeton-Sims-ClustersSandwiches.pdf" target="_blank" rel="noopener noreferrer">
+            Clustering, Random Effects, Mixed Models, Sandwiches
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Heteroskedasticity');">
+                Heteroskedasticity
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
+                Autocorrelation
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('LMMs');">
+                LMMs
+            </div>
+            
+        </span>
+    </div>
+
 </div>
+
+<div class="li2" "li"="" data-index="8" data-categories="Spatial,Autocorrelation">
+
+    <img class="resource-icon" src="posts/resources/icons/OhSU.png" alt="resource-icon"> 
+
+    <div>
+        <!--### Format: {Author, Title} ###-->
+        <span class="resource-author"> 
+            Peter Craigmile,&nbsp;
+        </span>
+        <a class="resource-title" href="posts/resources/OhSU-Craigmile-Geostatistical.pdf" target="_blank" rel="noopener noreferrer">
+            A Review of Traditional Stationary Geostatistical Models
+        </a>
+
+        <br> <!--### Newline ###-->
+
+        <!--### Format: {Tag, Tag, Tag, ...} ###-->
+        <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Spatial');">
+                Spatial
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
+                Autocorrelation
+            </div>
+            
+        </span>
+    </div>
+
 </div>
-</div>
-</a>
-</div>
-</div>
+
+</ul>
+
+<!--#########################################################################-->
+
+<script>
+    // Global variable to store current categories
+    var currentCategories = [];
+    
+    function getCurrentCategories() {
+        return currentCategories;
+    }
+    
+    function manageCategorySelection(category) {
+        if (category === 'RESET') {
+            currentCategories = []; // Reset categories
+        } else {
+            const index = currentCategories.indexOf(category);
+            if (index > -1) {
+                currentCategories.splice(index, 1); // Remove category if already selected
+            } else {
+                currentCategories.push(category); // Add category if not already selected
+            }
+        }
+    
+        // Update UI based on the new state of currentCategories
+        highlightCurrentCategories();
+        filterItemsByCategories();
+    }
+    
+    function highlightCurrentCategories() {
+        document.querySelectorAll('.listing-category').forEach(div => {
+            if (currentCategories.includes(div.innerText)) {
+                div.classList.add('category-highlighted');
+            } else {
+                div.classList.remove('category-highlighted');
+            }
+        });
+    }
+    
+    function filterItemsByCategories() {
+        document.querySelectorAll('.li2').forEach(item => {
+            const itemCategories = item.getAttribute('data-categories').split(',');
+            var isMatch = true; // Assume it's a match initially
+            if (currentCategories.length > 0) {
+                for (var i = 0; i < currentCategories.length; i++) {
+                    if (!itemCategories.includes(currentCategories[i])) {
+                        isMatch = false; // If any category is not included, it's not a match
+                        break; // No need to check further
+                    }
+                }
+            }
+            item.style.display = isMatch ? '' : 'none';
+        });
+    }
+    
+    // Initialize page state
+    document.addEventListener("DOMContentLoaded", () => {
+        highlightCurrentCategories();
+        filterItemsByCategories();
+    });
+    
+</script>
+
+<!--#########################################################################-->
+
+<script>
+
+    const ALL_CATEGORIES = {
+        "Model":    ["LMs", "LMMs", "GLMs", "GLMMs", "GAMs"], 
+        "Length":   ["Quick-Read"], 
+        "Language": ["R", "SAS"],
+        "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial"],
+        "Other":    []
+    };
+
+    var margin = document.getElementById("quarto-margin-sidebar");
+    margin.innerHTML = `
+        <h4>Filter Your Results:</h4>
+        <span class="resource-categories listing-categories" style="float:right;">
+            <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
+                RESET
+            </div>
+        </span>
+    `
+    
+    for (const [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
+        margin.innerHTML += 
+            "<h5>" + CLASS + "</h5>" + 
+            "<span class='resource-categories listing-categories'>" + 
+            CATEGORIES.map((CAT) => 
+                "<div class='resource-category listing-category' onclick='manageCategorySelection(\"" + CAT + "\");'>" + 
+                    CAT + 
+                "</div>"     
+            ).join('\n') + 
+            "</span>"
+    } 
+
+           
+</script>  
 <div class="listing-no-matching d-none">
 No matching items
 </div>

@@ -16,6 +16,8 @@ website:
         file: teaching.qmd
       - text: "Projects"
         file: projects.qmd
+      - text: "Resources"
+        file: resources.qmd
     right: 
       - icon: linkedin
         href: https://www.linkedin.com/in/miles-m-moran/
