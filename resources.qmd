@@ -1,12 +1,13 @@
 ---
 title: "Resources"
 
+
+          
 format: 
   html:
     page-layout: full
     css: "__assets/css/styles-resources.css"
-    toc: false
-    
+
 listing:
   id: resources 
   type: default
@@ -19,11 +20,9 @@ listing:
 
 <!--#########################################################################-->
 
-The following is a curated list of resources I often recommend to our consulting clients. Choose from the categories below to narrow your search:
+The following is a curated list of resources I often recommend to our consulting clients. Select one or more niches/categories from the sidebar to filter the list.
 
 ---
-
-Categories:
 
 ::: {#resources}
 :::

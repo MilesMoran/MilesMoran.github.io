@@ -1,3 +1,25 @@
+#quarto-margin-sidebar {
+    border-left: 1px solid #DEE2E6;
+    padding-left: 20px;
+}
+
+.sidebar-container {
+    /* border: 1px solid var(--bs-primary);  */
+    /* border-radius: 5px; */
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+
+    .sidebar-disp-filter {
+        font-weight: bold;
+    }
+    
+    .sidebar-disp-catclass {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        text-decoration: underline;
+    }
+}
 
 .li2 {
     display: flex;
@@ -6,25 +28,25 @@
     border: 1px solid #DEE2E6; 
     border-radius: 5px;
     padding: 10px;
-}
 
-.resource-author {
-    font-size: 1rem;
-    /* font-style: italic; */
-}
-
-.resource-title {
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.resource-icon {
-    height: 100%; 
-    object-fit: cover; 
-    margin-right: 5px; 
-    width: auto; 
-    max-width: none;   
+    .resource-author {
+        font-size: 1rem;
+        /* font-style: italic; */
+    }
+    
+    .resource-title {
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .resource-icon {
+        height: 100%; 
+        object-fit: cover; 
+        margin-right: 5px; 
+        width: auto; 
+        max-width: none;   
+    }
 }
 
 .resource-categories {
@@ -33,7 +55,6 @@
     row-gap: 0.4em;
     column-gap: 0.4em;
     margin: 0.5em 0;
-    /* font-family: monospace; */
     
     .resource-category {
         color: #6C757D;             /**/
@@ -45,15 +66,16 @@
         cursor: pointer;            /**/
         /* transition: color 500ms, background-color 500ms; */
     }
-    
-    .category-highlighted {
-        color: white;
-        background-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-    }
+    .category-highlighted, 
     .resource-category:hover {
         color: white;
         background-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
     }
+}
+
+.clear-categories {
+    border: 1px solid red;
+    border-radius: 5px;
 }
 
 ul.pub-list {

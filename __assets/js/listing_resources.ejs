@@ -1,20 +1,23 @@
 ```{=html}
 <!--#########################################################################-->
 
-<!-- Server-side script to generate the list of all (unique) categories -->
+<!-- 
+### This may come in-handy later if you wish to put the list of categories
+### in the body section instead of the sidebar/margin sections 
+
 <%
-let all_categories = [];
-for(item of items) {
-    for(category of item.categories) {
-        if (!all_categories.includes(category)) {
-            all_categories.push(category);
+    let all_categories = [];
+    for(item of items) {
+        for(category of item.categories) {
+            if (!all_categories.includes(category)) {
+                all_categories.push(category);
+            }
         }
     }
-}
-all_categories = all_categories.sort();
+    all_categories = all_categories.sort();
 %>
 
-<!-- <span class="resource-categories listing-categories">
+<span class="resource-categories listing-categories">
     <% for (const category of all_categories) { %>
     <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
         <%= category %>
@@ -23,13 +26,16 @@ all_categories = all_categories.sort();
 </span>
 
 <span class="resource-categories listing-categories" style="float:right;">
-    <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
-        RESET
+    <div class="resource-category listing-category" onclick="manageCategorySelection('CLEAR');">
+        CLEAR
     </div>
-</span> -->
+</span> 
 
-<br />
-<hr> <!--####################################################################-->
+<br /> 
+<hr>  
+-->
+
+<!--#########################################################################-->
 
 <ul class="pub-list list">
 <% for (const item of items) { %>
@@ -73,7 +79,7 @@ all_categories = all_categories.sort();
     }
     
     function manageCategorySelection(category) {
-        if (category === 'RESET') {
+        if (category === 'CLEAR') {
             currentCategories = []; // Reset categories
         } else {
             const index = currentCategories.indexOf(category);
@@ -135,19 +141,23 @@ all_categories = all_categories.sort();
         "Other":    []
     };
 
-    var margin = document.getElementById("quarto-margin-sidebar");
-    margin.innerHTML = `
-        <h4>Filter Your Results:</h4>
-        <span class="resource-categories listing-categories" style="float:right;">
-            <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
-                RESET
+    var marginL = document.getElementById("quarto-sidebar");
+    var marginR = document.getElementById("quarto-margin-sidebar");
+
+    var htmlWIP = `
+        <div class='sidebar-container'>
+        <h4 class='sidebar-disp-filter'>Filter Your Results</h4>
+        <span class="resource-categories listing-categories clear-categories" style="float:right;">
+            <div class="resource-category listing-category" onclick="manageCategorySelection('CLEAR');">
+                CLEAR
             </div>
         </span>
+        <br />
     `
-    
+
     for (const [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
-        margin.innerHTML += 
-            "<h5>" + CLASS + "</h5>" + 
+        htmlWIP += 
+            "<h5 class='sidebar-disp-catclass'>" + CLASS + ": </h5>" + 
             "<span class='resource-categories listing-categories'>" + 
             CATEGORIES.map((CAT) => 
                 "<div class='resource-category listing-category' onclick='manageCategorySelection(\"" + CAT + "\");'>" + 
@@ -157,7 +167,8 @@ all_categories = all_categories.sort();
             "</span>"
     } 
 
+    marginR.innerHTML = htmlWIP + "</div>"
 
-           
 </script>  
 ```
+

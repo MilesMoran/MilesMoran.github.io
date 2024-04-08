@@ -534,6 +534,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Autocorrelation">Autocorrelation</div><div class="category" data-category="Contrasts">Contrasts</div><div class="category" data-category="Data Viz">Data Viz</div><div class="category" data-category="DoE">DoE</div><div class="category" data-category="Heteroskedasticity">Heteroskedasticity</div><div class="category" data-category="LMMs">LMMs</div><div class="category" data-category="Multiple Comparisons">Multiple Comparisons</div><div class="category" data-category="Power Analysis">Power Analysis</div><div class="category" data-category="Quick-Read">Quick-Read</div><div class="category" data-category="R">R</div><div class="category" data-category="SAS">SAS</div><div class="category" data-category="Spatial">Spatial</div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
@@ -558,15 +559,16 @@ window.Quarto = {
 
 
 <!--#########################################################################-->
-<p>The following is a curated list of resources I often recommend to our consulting clients. Choose from the categories below to narrow your search:</p>
+<p>The following is a curated list of resources I often recommend to our consulting clients. Select one or more niches/categories from the sidebar to filter the list.</p>
 <hr>
-<p>Categories:</p>
 <div id="listing-resources" class="quarto-listing quarto-listing-container-custom">
 <!--#########################################################################-->
 
-<!-- Server-side script to generate the list of all (unique) categories -->
+<!-- 
+### This may come in-handy later if you wish to put the list of categories
+### in the body section instead of the sidebar/margin sections 
 
-<!-- <span class="resource-categories listing-categories">
+<span class="resource-categories listing-categories">
     
     <div class="resource-category listing-category" onclick="manageCategorySelection('Autocorrelation');">
         Autocorrelation
@@ -619,13 +621,16 @@ window.Quarto = {
 </span>
 
 <span class="resource-categories listing-categories" style="float:right;">
-    <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
-        RESET
+    <div class="resource-category listing-category" onclick="manageCategorySelection('CLEAR');">
+        CLEAR
     </div>
-</span> -->
+</span> 
 
-<br>
-<hr> <!--####################################################################-->
+<br /> 
+<hr>  
+-->
+
+<!--#########################################################################-->
 
 <ul class="pub-list list">
 
@@ -961,7 +966,7 @@ window.Quarto = {
     }
     
     function manageCategorySelection(category) {
-        if (category === 'RESET') {
+        if (category === 'CLEAR') {
             currentCategories = []; // Reset categories
         } else {
             const index = currentCategories.indexOf(category);
@@ -1023,19 +1028,23 @@ window.Quarto = {
         "Other":    []
     };
 
-    var margin = document.getElementById("quarto-margin-sidebar");
-    margin.innerHTML = `
-        <h4>Filter Your Results:</h4>
-        <span class="resource-categories listing-categories" style="float:right;">
-            <div class="resource-category listing-category" onclick="manageCategorySelection('RESET');">
-                RESET
+    var marginL = document.getElementById("quarto-sidebar");
+    var marginR = document.getElementById("quarto-margin-sidebar");
+
+    var htmlWIP = `
+        <div class='sidebar-container'>
+        <h4 class='sidebar-disp-filter'>Filter Your Results</h4>
+        <span class="resource-categories listing-categories clear-categories" style="float:right;">
+            <div class="resource-category listing-category" onclick="manageCategorySelection('CLEAR');">
+                CLEAR
             </div>
         </span>
+        <br />
     `
-    
+
     for (const [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
-        margin.innerHTML += 
-            "<h5>" + CLASS + "</h5>" + 
+        htmlWIP += 
+            "<h5 class='sidebar-disp-catclass'>" + CLASS + ": </h5>" + 
             "<span class='resource-categories listing-categories'>" + 
             CATEGORIES.map((CAT) => 
                 "<div class='resource-category listing-category' onclick='manageCategorySelection(\"" + CAT + "\");'>" + 
@@ -1045,7 +1054,8 @@ window.Quarto = {
             "</span>"
     } 
 
-           
+    marginR.innerHTML = htmlWIP + "</div>"
+
 </script>  
 <div class="listing-no-matching d-none">
 No matching items

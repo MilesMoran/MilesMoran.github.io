@@ -8,6 +8,7 @@ project:
 
 website:
   title: "Miles Moran" 
+  favicon: "__assets/images/icon.png"
   navbar:
     left:
       - text: "About"
@@ -25,7 +26,12 @@ website:
         href: https://github.com/milesmoran
       - icon: envelope-fill
         href: mailto:miles.moran@oregonstate.edu
-  favicon: "__assets/images/icon.png"
+  # sidebar:
+  #   - id: blog
+  #     collapse-level: 2
+  #     contents: 
+  #     - resources.qmd
+  #     border: true
 
 ################################################################################
 
@@ -42,7 +48,11 @@ format:
     include-in-header:
       # - file: "__assets/latex/mathjaxGreek.html"
       - file: "__assets/latex/commands.qmd"
-    
+    grid:
+      sidebar-width: 250px  # default: 250px
+      body-width: 800px     # default: 800px
+      margin-width: 250px   # default: 250px
+      gutter-width: 1.5rem  # default: 1.5em
 
 highlight-style: "__assets/other/Miles-textmate.theme"
 code-block-bg: "#FAFAFA"
