@@ -38,9 +38,9 @@ format:
     toc: true
     monofont: "DejaVu Sans Mono"
     monofontoptions: Scale=0.8
-    html-math-method: "mathjax"
+    # html-math-method: "mathjax"
     include-in-header:
-      - file: "__assets/latex/mathjaxGreek.html"
+      # - file: "__assets/latex/mathjaxGreek.html"
       - file: "__assets/latex/commands.qmd"
     
 
