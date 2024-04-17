@@ -8,6 +8,12 @@ parsePath <- function(x, L)
     return()
 }
 
+parseName <- function(x,y) 
+{
+    ifelse(is.na(y), x, paste(y, x, sep=", ")) %>% 
+    return()
+}
+
 parseCateg <- function(x) 
 {
     x %>% 
@@ -25,7 +31,7 @@ main <- function()
       image: 'posts/resources/icons/{IMG_PATH}' 
       title: '{TITLE}'
       description: '{INSTITUTE}'
-      author: '{AUTHOR_LAST}, {AUTHOR_FIRST}'
+      author: '{parseName(AUTHOR_FIRST, AUTHOR_LAST)}'
       categories: {parseCateg(CATEGORIES)} \n
     ") %>% 
     writeLines("posts/resources/resources.yml")

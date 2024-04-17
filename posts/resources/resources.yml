@@ -65,14 +65,14 @@
   image: 'posts/resources/icons/UCLA.png' 
   title: 'Intro to GLMMs'
   description: 'UCLA'
-  author: 'NA, UCLA Statistical Consulting Group'
+  author: 'UCLA Statistical Consulting Group'
   categories: ['GLMMs', 'Autocorrelation'] 
 
 - path: 'https://stats.oarc.ucla.edu/other/mult-pkg/introduction-to-linear-mixed-models/'
   image: 'posts/resources/icons/UCLA.png' 
   title: 'Intro to LMMs'
   description: 'UCLA'
-  author: 'NA, UCLA Statistical Consulting Group'
+  author: 'UCLA Statistical Consulting Group'
   categories: ['LMMs', 'Autocorrelation'] 
 
 - path: 'posts/resources/UIBK-Zeileis-SandwichPackage.pdf'
