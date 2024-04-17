@@ -2,6 +2,7 @@
 
 project:
   type: website
+  pre-render: "__assets/r/resource_generator.r"
   output-dir: docs
 
 ################################################################################

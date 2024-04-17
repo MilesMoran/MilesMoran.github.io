@@ -1,74 +1,140 @@
-################################################################################
+- path: 'posts/resources/Princeton-Sims-ClustersSandwiches.pdf'
+  image: 'posts/resources/icons/Princeton.png' 
+  title: 'Clustering, Random Effects, Mixed Models, Sandwiches'
+  description: 'Princeton'
+  author: 'Sims, Christopher'
+  categories: ['Heteroskedasticity', 'Autocorrelation', 'LMMs'] 
 
-  - path: "posts/resources/Princeton-Sims-ClustersSandwiches.pdf"
-    image: "posts/resources/icons/Princeton.png"
-    title: "Clustering, Random Effects, Mixed Models, Sandwiches"
-    description: "Princeton"
-    author: "Christopher Sims"
-    categories: ["Heteroskedasticity", "Autocorrelation", "LMMs"]
-    
-  - path: "posts/resources/UGA-Hall-LMMIntro.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "An Intro to LMMs in R and SAS"
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["Heteroskedasticity", "Autocorrelation", "LMMs", "R", "SAS"]
-    
-  - path: "posts/resources/UGA-Hall-RGraphicsIntro1.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "An Intro to R Graphics, Part I: Base Graphics"
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["Data Viz", "R"]
+- path: 'posts/resources/UGA-Hall-LMMIntro.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'An Intro to LMMs in R and SAS'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['Heteroskedasticity', 'Autocorrelation', 'LMMs', 'R', 'SAS'] 
 
-  - path: "posts/resources/UGA-Hall-RGraphicsIntro2.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "An Intro to R Graphics, Part II: ggplot2"
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["Data Viz", "R"]
-    
-  - path: "posts/resources/UGA-Hall-FactorsInR.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "Working with Factors in R: Model Parameterizations, Contrasts, Inferences on Means, etc."
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["DoE", "Contrasts", "R"]
-    
-  - path: "posts/resources/UGA-Hall-FactorsInR.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "Multiple Comparisons & Simultaneous Inference"
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["DoE", "Contrasts", "Multiple Comparisons", "R"]
-    
-  - path: "posts/resources/UGA-Hall-PowerTalk.pdf"
-    image: "posts/resources/icons/UGA.png"
-    title: "Power Analysis and Sample Size Determination"
-    description: "UGA"
-    author: "Dan Hall"
-    categories: ["DoE", "Contrasts", "Multiple Comparisons", "Power Analysis", "R"]
-    
-  - path: "posts/resources/Stanford-Sainani-CorrelationBrief.pdf"
-    image: "posts/resources/icons/Stanford.png"
-    title: "The Importance of Accounting for Correlated Observations"
-    description: "Stanford"
-    author: "Kristin Sainani"
-    categories: ["Autocorrelation", "Quick-Read"]
-    
-  - path: "posts/resources/OhSU-Craigmile-Geostatistical.pdf"
-    image: "posts/resources/icons/OhSU.png"
-    title: "A Review of Traditional Stationary Geostatistical Models"
-    description: "Ohio State"
-    author: "Peter Craigmile"
-    categories: ["Spatial", "Autocorrelation"]
-    
-    
-# - path: "posts/resources/..."
-#   title: ""
-#   description: ""
-#   author: ""
-#   categories: []
+- path: 'posts/resources/UGA-Hall-RGraphicsIntro1.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'An Intro to R Graphics, Part I: Base Graphics'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['Data Viz', 'R'] 
 
-    
-################################################################################
+- path: 'posts/resources/UGA-Hall-RGraphicsIntro2.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'An Intro to R Graphics, Part II: ggplot2'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['Data Viz', 'R'] 
+
+- path: 'posts/resources/UGA-Hall-FactorsInR.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'Working with Factors in R'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['DoE', 'Contrasts', 'R'] 
+
+- path: 'posts/resources/UGA-Hall-MultCompTalk.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'Multiple Comparisons & Simultaneous Inference'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['DoE', 'Contrasts', 'Multiple Comparisons', 'R'] 
+
+- path: 'posts/resources/UGA-Hall-PowerTalk.pdf'
+  image: 'posts/resources/icons/UGA.png' 
+  title: 'Power Analysis and Sample Size Determination'
+  description: 'UGA'
+  author: 'Hall, Dan'
+  categories: ['DoE', 'Contrasts', 'Multiple Comparisons', 'Power Analysis', 'R'] 
+
+- path: 'posts/resources/Stanford-Sainani-CorrelationBrief.pdf'
+  image: 'posts/resources/icons/Stanford.png' 
+  title: 'The Importance of Accounting for Correlated Observations'
+  description: 'Stanford'
+  author: 'Sainani, Kristin'
+  categories: ['Autocorrelation', 'Quick-Read'] 
+
+- path: 'posts/resources/OhSU-Craigmile-Geostatistical.pdf'
+  image: 'posts/resources/icons/OhSU.png' 
+  title: 'A Review of Traditional Stationary Geostatistical Models'
+  description: 'Ohio State'
+  author: 'Craigmile, Peter'
+  categories: ['Spatial', 'Autocorrelation'] 
+
+- path: 'https://stats.oarc.ucla.edu/other/mult-pkg/introduction-to-generalized-linear-mixed-models/'
+  image: 'posts/resources/icons/UCLA.png' 
+  title: 'Intro to GLMMs'
+  description: 'UCLA'
+  author: 'NA, UCLA Statistical Consulting Group'
+  categories: ['GLMMs', 'Autocorrelation'] 
+
+- path: 'https://stats.oarc.ucla.edu/other/mult-pkg/introduction-to-linear-mixed-models/'
+  image: 'posts/resources/icons/UCLA.png' 
+  title: 'Intro to LMMs'
+  description: 'UCLA'
+  author: 'NA, UCLA Statistical Consulting Group'
+  categories: ['LMMs', 'Autocorrelation'] 
+
+- path: 'posts/resources/UIBK-Zeileis-SandwichPackage.pdf'
+  image: 'posts/resources/icons/UIBK.png' 
+  title: 'Econometric Computing with HC and HAC Covariance Matrix Estimators'
+  description: 'UIBK'
+  author: 'Zeileis, Achim'
+  categories: ['LMs', 'GLMs', 'Heteroskedasticity', 'R'] 
+
+- path: 'posts/resources/RMIT-Scholer-ANOVA-SumSquares.html'
+  image: 'posts/resources/icons/RMIT.png' 
+  title: 'ANOVA (and R): Type I, II and III Sums of Squares'
+  description: 'RMIT'
+  author: 'Scholer, Falk'
+  categories: ['LMs', 'DoE', 'R'] 
+
+- path: 'https://library.virginia.edu/data/articles/understanding-semivariograms'
+  image: 'posts/resources/icons/UVA.png' 
+  title: 'Understanding Semivariograms'
+  description: 'UVA'
+  author: 'Ford, Clay'
+  categories: ['LMs', 'LMMs', 'R', 'Autocorrelation', 'Spatial', 'Simulation'] 
+
+- path: 'https://library.virginia.edu/data/articles/modeling-non-constant-variance'
+  image: 'posts/resources/icons/UVA.png' 
+  title: 'Modeling Non-Constant Variance'
+  description: 'UVA'
+  author: 'Ford, Clay'
+  categories: ['LMs', 'Heteroskedasticity', 'R', 'Simulation'] 
+
+- path: 'https://library.virginia.edu/data/articles/understanding-robust-standard-errors'
+  image: 'posts/resources/icons/UVA.png' 
+  title: 'Understanding Robust Standard Errors'
+  description: 'UVA'
+  author: 'Ford, Clay'
+  categories: ['LMs', 'Heteroskedasticity', 'R', 'Simulation'] 
+
+- path: 'https://grodri.github.io/survival/'
+  image: 'posts/resources/icons/Princeton.png' 
+  title: 'Survival Analysis (POP 509 Course Materials)'
+  description: 'Princeton'
+  author: 'Rodríguez, Germán'
+  categories: ['GLMs', 'GLMMs', 'Survival', 'R', 'Stata. Multivariate'] 
+
+- path: 'https://grodri.github.io/glms/'
+  image: 'posts/resources/icons/Princeton.png' 
+  title: 'Generalized Linear Models (POP 507 Course Materials)'
+  description: 'Princeton'
+  author: 'Rodríguez, Germán'
+  categories: ['GLMs', 'GLMMs', 'Survival', 'R', 'Stata'] 
+
+- path: 'https://grodri.github.io/multilevel/index'
+  image: 'posts/resources/icons/Princeton.png' 
+  title: 'Multilevel Models (POP 510 Course Materials) '
+  description: 'Princeton'
+  author: 'Rodríguez, Germán'
+  categories: ['LMMs', 'GLMMs', 'Autocorrelation', 'R', 'Stata', 'Bayesian'] 
+
+- path: 'https://cran.r-project.org/web/packages/DHARMa/vignettes/DHARMa.html'
+  image: 'posts/resources/icons/Regensburg.png' 
+  title: 'DHARMa: Residual Diagnostics for Hierarchical Regression Models'
+  description: 'Universität Regensburg'
+  author: 'Hartig, Florian'
+  categories: ['GLMs', 'GLMMs', 'Autocorrelation', 'R', 'Simulation'] 
+

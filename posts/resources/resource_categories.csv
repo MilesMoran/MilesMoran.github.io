@@ -1,0 +1,20 @@
+,CATEGORY,FULLNAME,DESCRIPTION
+Model,LMs,Linear Models,
+Model,LMMs,Linear Mixed Models,
+Model,GLMs,Generalized Linear Models,
+Model,GLMMs,Generalized Linear Mixed Models,
+Resource,Book Chapter,NA,NA
+Resource,Article,NA,NA
+Resource,Tutorial,NA,NA
+Resource,Lecture Notes,NA,NA
+Language,R,NA,NA
+Language,SAS,NA,NA
+Topic,Autocorrelation,NA,
+Topic,Contrasts,NA,
+Topic,Data Viz,NA,
+Topic,DoE,NA,
+Topic,Heteroskedasticity,NA,
+Topic,Multiple Comparisons,NA,
+Topic,Power Analysis,NA,
+Topic,Spatial,NA,
+Topic,Time-Series,NA,
