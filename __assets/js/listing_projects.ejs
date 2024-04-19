@@ -1,0 +1,58 @@
+```{=html}
+<!--#########################################################################-->
+
+<div class="list grid quarto-listing-cols-3">
+<% for (const item of items) { %>
+
+    <div class="g-col-1 listing-item" <%= metadataAttrs(item) %> data-categories="<%= item.categories.join(', ') %>">
+    <div class="quarto-grid-item card h-100 card-left">
+
+        <!--#################################################################-->
+    
+        <a href="<%- item.path %>" class="quarto-grid-link">
+        <p class="card-img-top" >
+            <img src="<%- item.image %>" class="thumbnail-image card-img">
+        </p>
+        </a>
+    
+        <!--#################################################################-->
+    
+        <div class="card-body post-contents">
+            
+            <a href="<%- item.path %>" class="quarto-grid-link">
+            <h5 class="no-anchor card-title listing-title">
+                <%= item.title %>
+            </h5>    
+            </a>
+    
+            <span class="resource-categories listing-categories">
+            <% for (const category of item.categories) { %>
+            <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
+                <%= category %>
+            </div>
+            <% } %>
+            </span>
+       
+            <div class="card-text listing-description delink">
+                <%= item.description %>
+            </div>
+    
+            <div class="card-attribution card-text-small end">
+            <div class="listing-date">
+                <%= item.date %>
+            </div>
+            </div>
+    
+        </div>
+    
+        <!--#################################################################-->
+        
+    </div>
+    </div>
+
+<% } %>
+</div>
+
+<!--#########################################################################-->
+```
+

@@ -1,0 +1,69 @@
+<!--#########################################################################-->
+
+::::::{#glossary-container}
+### Glossary
+
+#### Models: 
+
+:::{.callout-note collapse="true"}
+## LMs ("Linear Models")
+These are models where $\E{\bm{y}}=\bm{Xβ}$. *Normality* is often assumed, i.e. $\bm{y} \sim \Normal{\bm{Xβ}, \bm{Σ}}$.
+:::
+:::{.callout-note collapse="true"}
+## LMMs ("Linear Mixed Models")
+These are models where $\E{\bm{y}|\bm{α}}=\bm{Xβ+Zα}$, where $\bm{α}$ are *random-effects*. *Normality* is often assumed, i.e. $(\bm{y}|\bm{α}) \sim \Normal{\bm{Xβ+Zα}, \bm{Σ}}$.
+:::
+:::{.callout-note collapse="true"}
+## GLMs ("Generalized Linear Models")
+These are models where $\bm{θ=Xβ}$, where $\bm{θ}$ is some parameter of the distribution of $\bm{y}$. 
+:::
+:::{.callout-note collapse="true"}
+## GLMs ("Generalized Linear Mixed Models")
+These are models where $\bm{θ=Xβ+Zα}$, where $\bm{θ}$ is some parameter of the distribution of $\bm{y}$, and where $\bm{α}$ are *random-effects*. 
+:::
+
+<!--#################################-->
+<!--
+#### Topic:
+
+:::{.callout-note collapse="true"}
+## Autocorrelation
+descr
+:::
+:::{.callout-note collapse="true"}
+## Contrasts
+descr
+:::
+:::{.callout-note collapse="true"}
+## Data Viz ("Data Visualization")
+descr
+:::
+:::{.callout-note collapse="true"}
+## DoE ("Design of Experiments")
+descr
+:::
+:::{.callout-note collapse="true"}
+## Heteroskedasticity
+descr
+:::
+:::{.callout-note collapse="true"}
+## Multiple Comparisons
+descr
+:::
+:::{.callout-note collapse="true"}
+## Power Analysis
+descr
+:::
+:::{.callout-note collapse="true"}
+## Spatial
+descr
+:::
+:::{.callout-note collapse="true"}
+## Time-Series
+descr
+:::
+-->
+
+::::::
+
+<!--#########################################################################-->

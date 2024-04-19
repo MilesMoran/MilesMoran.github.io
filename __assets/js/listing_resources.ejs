@@ -39,7 +39,7 @@
 
 <ul class="pub-list list">
 <% for (const item of items) { %>
-<div class="li2" "li" <%= metadataAttrs(item) %> data-categories="<%= item.categories.join(', ') %>">
+<div class="li2 listing-item" <%= metadataAttrs(item) %> data-categories="<%= item.categories.join(', ') %>">
 
     <img class="resource-icon" src="<%= item.image %>" alt="resource-icon"> 
 
@@ -56,11 +56,11 @@
 
         <!--### Format: {Tag, Tag, Tag, ...} ###-->
         <span class="resource-categories listing-categories">
-            <% for (const category of item.categories) { %>
-            <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
-                <%= category %>
-            </div>
-            <% } %>
+        <% for (const category of item.categories) { %>
+        <div class="resource-category listing-category" onclick="manageCategorySelection('<%=category%>');">
+            <%= category %>
+        </div>
+        <% } %>
         </span>
     </div>
 

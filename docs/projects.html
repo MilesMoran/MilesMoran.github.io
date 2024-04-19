@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-highlight-style","listing-code-block-bg","listing-code-block-border-left","listing-callout-appearance","listing-callout-icon","listing-language","listing-title","listing-date","listing-image","listing-description","listing-bibliography","listing-nocite","listing-code-fold","listing-execute","listing-categories","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -469,6 +469,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="__assets/css/styles.css">
+<link rel="stylesheet" href="__assets/css/styles-resources.css">
 
 
 
@@ -529,14 +530,20 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Computation">Computation</div><div class="category" data-category="Data Visualization">Data Visualization</div><div class="category" data-category="R">R</div><div class="category" data-category="Simulation">Simulation</div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link active" data-scroll-target="#glossary">Glossary</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Computation">Computation</div><div class="category" data-category="Data Viz">Data Viz</div><div class="category" data-category="R">R</div><div class="category" data-category="Simulation">Simulation</div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -545,7 +552,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -559,49 +566,191 @@ window.Quarto = {
 
 <!--#########################################################################-->
 <hr>
-<div id="listing-projects" class="quarto-listing quarto-listing-container-grid">
+<div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
+<!--#########################################################################-->
+
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R,Simulation,Computation,Data Visualization" data-listing-date-sort="1670400000000" data-listing-file-modified-sort="1707857727014" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2030">
-<a href="./posts/projects/pcs-proj/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/projects/pcs-proj/grf.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Generating Random Fields
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+    <div class="g-col-1 listing-item" data-index="0" data-categories="R,Simulation,Computation,Data Viz" data-listing-date-sort="1670400000000" data-listing-file-modified-sort="1713564583093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2030">
+    <div class="quarto-grid-item card h-100 card-left">
+
+        <!--#################################################################-->
+    
+        <a href="./posts/projects/pcs-proj/index.html" class="quarto-grid-link">
+        <p class="card-img-top">
+            <img src="./posts/projects/pcs-proj/grf.png" class="thumbnail-image card-img">
+        </p>
+        </a>
+    
+        <!--#################################################################-->
+    
+        <div class="card-body post-contents">
+            
+            <a href="./posts/projects/pcs-proj/index.html" class="quarto-grid-link">
+            <h5 class="no-anchor card-title listing-title">
+                Generating Random Fields
+            </h5>    
+            </a>
+    
+            <span class="resource-categories listing-categories">
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('R');">
+                R
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Simulation');">
+                Simulation
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Computation');">
+                Computation
+            </div>
+            
+            <div class="resource-category listing-category" onclick="manageCategorySelection('Data Viz');">
+                Data Viz
+            </div>
+            
+            </span>
+       
+            <div class="card-text listing-description delink">
+                How do researchers generate high-dimensional normal variates for use in simulation studies?
+            </div>
+    
+            <div class="card-attribution card-text-small end">
+            <div class="listing-date">
+                2022-12-07
+            </div>
+            </div>
+    
+        </div>
+    
+        <!--#################################################################-->
+        
+    </div>
+    </div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Simulation'); return false;">
-Simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Computation'); return false;">
-Computation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
-</div>
-</div>
-<div class="card-text listing-description">
-How do researchers generate high-dimensional normal variates for use in simulation studies?
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-2022-12-07
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
+
+<!--#########################################################################-->
 <div class="listing-no-matching d-none">
 No matching items
 </div>
 </div>
+<!--#########################################################################-->
+<div id="glossary-container">
+<section id="glossary" class="level3">
+<h3 class="anchored" data-anchor-id="glossary">Glossary</h3>
+<section id="models" class="level4">
+<h4 class="anchored" data-anchor-id="models">Models:</h4>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LMs (“Linear Models”)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These are models where <span class="math inline">\(\E{\bm{y}}=\bm{Xβ}\)</span>. <em>Normality</em> is often assumed, i.e.&nbsp;<span class="math inline">\(\bm{y} \sim \Normal{\bm{Xβ}, \bm{Σ}}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LMMs (“Linear Mixed Models”)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These are models where <span class="math inline">\(\E{\bm{y}|\bm{α}}=\bm{Xβ+Zα}\)</span>, where <span class="math inline">\(\bm{α}\)</span> are <em>random-effects</em>. <em>Normality</em> is often assumed, i.e.&nbsp;<span class="math inline">\((\bm{y}|\bm{α}) \sim \Normal{\bm{Xβ+Zα}, \bm{Σ}}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GLMs (“Generalized Linear Models”)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These are models where <span class="math inline">\(\bm{θ=Xβ}\)</span>, where <span class="math inline">\(\bm{θ}\)</span> is some parameter of the distribution of <span class="math inline">\(\bm{y}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GLMs (“Generalized Linear Mixed Models”)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These are models where <span class="math inline">\(\bm{θ=Xβ+Zα}\)</span>, where <span class="math inline">\(\bm{θ}\)</span> is some parameter of the distribution of <span class="math inline">\(\bm{y}\)</span>, and where <span class="math inline">\(\bm{α}\)</span> are <em>random-effects</em>.</p>
+</div>
+</div>
+</div>
+<!--#################################-->
+<!--
+#### Topic:
+
+:::{.callout-note collapse="true"}
+## Autocorrelation
+descr
+:::
+:::{.callout-note collapse="true"}
+## Contrasts
+descr
+:::
+:::{.callout-note collapse="true"}
+## Data Viz ("Data Visualization")
+descr
+:::
+:::{.callout-note collapse="true"}
+## DoE ("Design of Experiments")
+descr
+:::
+:::{.callout-note collapse="true"}
+## Heteroskedasticity
+descr
+:::
+:::{.callout-note collapse="true"}
+## Multiple Comparisons
+descr
+:::
+:::{.callout-note collapse="true"}
+## Power Analysis
+descr
+:::
+:::{.callout-note collapse="true"}
+## Spatial
+descr
+:::
+:::{.callout-note collapse="true"}
+## Time-Series
+descr
+:::
+-->
+</section>
+</section>
+</div>
+<!--#########################################################################-->
 <!--#########################################################################-->
 
 
@@ -1018,6 +1167,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script src="__assets/js/resources-generate-sidebar.js"></script>
+<script src="__assets/js/resources-filter-categories.js"></script>
+<script src="__assets/js/resources-move-glossary.js"></script>
 
 
 

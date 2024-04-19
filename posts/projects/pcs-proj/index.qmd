@@ -1,14 +1,14 @@
 ---
-title: "Generating Random Fields"
-date: "2022-12-07"
-image: grf.png
-description: "How do researchers generate high-dimensional normal variates for use in simulation studies?"
-bibliography: "grf.bib"
-nocite: "@*" 
+title: 'Generating Random Fields'
+date: '2022-12-07'
+image: 'grf.png'
+description: 'How do researchers generate high-dimensional normal variates for use in simulation studies?'
+bibliography: 'grf.bib'
+nocite: '@*' 
 code-fold: false
 execute:
   eval: false
-categories: [R, Simulation, Computation, Data Visualization]
+categories: ['R', 'Simulation', 'Computation', 'Data Viz']
 ---
 <!--#########################################################################-->
 <!--

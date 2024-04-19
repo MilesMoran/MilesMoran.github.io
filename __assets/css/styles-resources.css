@@ -67,10 +67,12 @@
         padding: 0.15em 0.5em;
         cursor: pointer;            
         /* transition: color 500ms, background-color 500ms; */
+        text-transform: none !important;
+        margin: 0em !important;
     }
     .category-highlighted, 
     .resource-category:hover {
-        color: white;
+        color: white !important;
         background-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
     }
 }

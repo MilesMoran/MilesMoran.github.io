@@ -3,18 +3,23 @@ title: "Projects"
 
 format: 
   html:
-    page-layout: article
-    # css: "__assets/css/styles-resources.css"
-    # toc: false
+    page-layout: full
+    css: "__assets/css/styles-resources.css"
+
+include-after-body:
+  text: |
+    <script src="__assets/js/resources-generate-sidebar.js"></script>
+    <script src="__assets/js/resources-filter-categories.js"></script>
+    <script src="__assets/js/resources-move-glossary.js"></script>
 
 listing:
   id: projects
-  type: grid
+  type: default
   contents: "posts/projects/pcs-proj/*.qmd"
-  # template: "__assets/js/listing_resources.ejs"
+  template: "__assets/js/listing_projects.ejs"
+  categories: unnumbered
   sort: "date desc"
   fields: [image, date, title, description, categories]
-  categories: unnumbered
   date-format: iso
 ---
 
@@ -24,5 +29,7 @@ listing:
 
 ::: {#projects}
 :::
+
+{{< include __assets/other/glossary.qmd >}}
 
 <!--#########################################################################-->

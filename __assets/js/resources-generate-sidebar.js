@@ -4,7 +4,7 @@ const ALL_CATEGORIES = {
     "Model":    ["LMs", "LMMs", "GLMs", "GLMMs"], 
     "Length":   ["Quick-Read"], 
     "Language": ["R", "SAS", "Stata"],
-    "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial", "Simulation", "Multivariate", "Survival", "Bayesian"],
+    "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial", "Simulation", "Multivariate", "Survival", "Bayesian", "Computation"],
     "Other":    []
 };
 
@@ -25,7 +25,10 @@ var htmlWIP = `
     <br />
 `
 
-for (const [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
+for (var [CLASS, CATEGORIES] of Object.entries(ALL_CATEGORIES)) {
+    if(CLASS==="Topic") {
+        CATEGORIES = CATEGORIES.sort();
+    }
     htmlWIP += 
         "<h5 class='sidebar-disp-catclass'>" + CLASS + ": </h5>" + 
         "<span class='resource-categories listing-categories'>" + 

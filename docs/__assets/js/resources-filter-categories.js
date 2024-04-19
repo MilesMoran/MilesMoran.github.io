@@ -35,7 +35,7 @@ function highlightCurrentCategories() {
 }
 
 function filterItemsByCategories() {
-    document.querySelectorAll('.li2').forEach(item => {
+    document.querySelectorAll('.listing-item').forEach(item => {
         const itemCategories = item.getAttribute('data-categories').split(',');
         var isMatch = true; // Assume it's a match initially
         if (currentCategories.length > 0) {
