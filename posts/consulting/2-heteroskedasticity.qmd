@@ -1,0 +1,224 @@
+---
+title: "Heteroskedasticity"
+date: today
+image: het.jpg
+# description: "How do researchers generate high-dimensional normal variates for use in simulation studies?"
+# bibliography: "grf.bib"
+# nocite: "@*" 
+code-fold: false
+execute:
+  eval: true
+categories: [R, Linear Models, Heteroskedasticity, Variance Structures, Sandwiches]
+toc-location: "left"
+---
+<!--#########################################################################-->
+
+![](het.jpg)
+
+```{r setup, eval=TRUE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, 
+                      warning = FALSE, cache = FALSE,
+                      fig.align = "center", out.width="75%")
+# options(width=85)
+# library(knitr)
+# library(kableExtra)
+
+library(ggplot2)
+library(dplyr)
+library(nlme)
+library(magrittr)
+
+```
+
+<!--#########################################################################-->
+
+# Defining Heteroskedasticity
+
+(to-do)
+
+<!--#########################################################################-->
+
+# Model-Based Methods
+
+When the functional form of $\Var{Y_i}$ is apparent, we can explicitly specify the Extended Linear Model 
+\begin{equation}
+\begin{alignBraced}
+    \E{Y_i}         &= \bm{x}_{i}^{\T} \bm{β}           \\
+    \Var{Y_i}       &= σ^2 g^2(\bm{v}_{i}, μ_i, \bm{δ}) \\
+    \Cor{Y_i, Y_j}  &= 0 
+\end{alignBraced} 
+\end{equation}
+
+by making assumptions about how $g$ depends on 
+
+::: {.column-margin}
+Pinheiro & Bates (2000) call $g$ the **variance function**, but this terminology is not universal
+:::
+
+- covariates $\bm{v}_i$ (which may incorporate all, some, or none of $\bm{x}_i$)
+- the mean $μ_i ≡ \E{Y_i}$
+- unknown parameters $\bm{δ}$
+    
+
+When $\Var{Y_i}=σ^2g^2(\bm{v}_i)$, we can estimate $\bm{β}$ outright using WLS:
+\begin{align*}
+    \WLS{\bm{β}}
+        &= \argmin{\bm{β}}{\sum_{i=1}^{n} W_{ii} e_{i}^{2} }, 
+            \quad W_{ii} = \frac{1}{g^2(\bm{v}_{i})} \\
+        &= (\bm{X}^{\T}\bm{W}\bm{X})^{-1}\bm{X}^{\T}\bm{W}\bm{Y}
+\end{align*}
+
+and if we specify $\Var{Y_i}$ correctly, $\WLS{\bm{β}}$ is the BLUE for $\bm{β}$. When $\Var{Y_i}=σ^2g^2(\bm{v}_i, μ_i, \bm{δ})$, we have to estimate $\bm{β}$ with other methods (e.g. ML or REML) which are *asymptotically* optimal but may be biased in finite-samples.
+
+::: {.column-margin}
+methods also include *Feasible*-WLS/*Two-Step*-WLS (special cases of IRWLS); but, these are usually inefficient or unpredictable
+:::
+
+::::::{.callout-note title="Question"}
+
+**When is the "functional form" of the variance structure "apparent?"**
+
+Sometimes, the form of $\Var{Y_i}$ is apparent from the design of the experiment / prior knowledge: 
+
+- $Y_i$ is a sum of $n_i$-many measurements: $\Var{Y_i} = σ^2 n_i$
+- $Y_i$ is an average of $n_i$-many measurements: $\Var{Y_i} = σ^2 \left(\tfrac{1}{n_i}\right)$
+
+Sometimes, the form of $\Var{Y_i}$ is apparent from the data:       
+
+:::{.columns}
+:::{.column width="45%"}
+![](HetPlotGrid.png)
+:::
+:::{.column width="10%"}
+:::
+:::{.column width="45%"}
+<br>
+
+| Plot | $\SD{Y_i}$         | $\Var{Y_i}$                   |
+|------|--------------------|-------------------------------|
+| (A)  | $σ |x_{i}|^{δ}$    | $σ^2 |x_{i}|^{2δ}$            |
+| (B)  | $σ \exp{δx_i}$     | $σ^2 \exp{2δx_i}$             |
+| (C)  | $σ δ_{j}$          | $σ^{2} δ_{j}^{2}$             |
+| (D)  | $σ δ_{j} \exp{x_i}$| $σ^{2} δ_{j}^{2} \exp{2x_i}$  |
+
+*caveat*: for (C) and (D), we set $δ_j = 1$ for one of the groups to avoid overparameterization 
+:::
+:::
+
+In general, though, model-based approaches to heteroskedasticity rely on the client's willingness to make **assumptions**: there is no oracle for identifying the "correct" or "optimal" variance structure.
+
+::::::
+
+### WLS with `lm()` 
+
+If the `weights` argument is specified, the `lm()` function will fit an Extended LM with WLS. To accurately fit a model with $\Var{Y_i} = σ^2g^2(\bm{v}_i)$, we set `weights=1/g²(v)`.
+
+### REML with `gls()`
+
+In general, the `gls()` function will fit an Extended LM with ML/REML (or Pseudo-ML/Pseudo-REML if a mean-variance relationship is assumed). Similar to `lm()`, we specify the variance structure using the `weights` argument. Note that 
+
+(1) `gls()` always maximizes the likelihood/restricted-likelihood of a **Normal** distribution 
+(2) when $g(\bm{v}_i)$ can depends only on known covariates, the WLS/GLS estimates and Normal-REML estimates coincide because they solve the same estimating equations.
+
+*Aside #1:* The notation being used by the `nlme` package is somewhat misleading. The circumstances that lead to identical REML and WLS/GLS estimates are a special case, so, the name `gls()` feels inaccurate. Since `lm()` is named for the type of model being fit (rather than the estimation method), I think a more accurate name for the `gls()` function would be `elm()`. 
+
+*Aside #2:* We generally prefer REML since the MLE for $σ^2$ (and any other variance components) is biased. This is why REML is the default `method` for `gls()`
+
+### Checking our Understanding
+
+Let's confirm our understanding with a quick simulation:
+
+:::{.panel-tabset}
+##### Step 1
+
+First, we'll generate some artificial data according to the Extended Linear Model given by
+\begin{align*}
+    Y_{i} \iid \Normal{ β_{0}+β_{1}x_{1i} , σ^2x_{1i} },
+        \qquad i ∈ \{1, ..., N\}
+\end{align*}
+where $N=1000, β_{0}=20$, $β_{1}=10$, and $σ^{2}=4$. In `R`, we have
+```{r}
+params <- list("N"=1000, "β0"=20, "β1"=10, "σ2"=4)
+x1 <- with(params, runif(N))
+X <- with(params, cbind(int = rep(1,N), x1=x1))
+y <- with(params, rnorm(N, mean=(β0+β1*x1), sd=sqrt(σ2*x1)))
+
+ggplot() + geom_point(aes(x=x1, y=y))
+```
+
+##### Step 2
+
+TEST: $\diag{X}$ and $\diag{\bm{X}}
+Next, we'll fit the Extended LM by-hand using WLS: 
+\begin{align*}
+    w_{i} &= \tfrac{1}{g^{2}(\bm{v}_{i})} = \tfrac{1}{x_{1i}}       \\
+    \bm{W} &= \diag{w_1, ..., w_n}                                  \\
+    \WLS{\bm{β}} &= (\bm{X'WX})^{-1}\bm{X'WY}                       \\
+    \WLS{σ}^{2} &= \tfrac{1}{n-p-1} \sum_{i=1}^{N} w_{i} e_{i}^{2}  \\
+    \SE{\WLS{\bm{β}}} &= \WLS{σ} \sqrt{(\bm{X'WX})^{-1}}
+\end{align*}
+where $p=\dim{\bm{β}}=2$. In `R`, we have
+
+```{r}
+w <- 1/x1 
+W <- diag(w)
+β.WLS <- solve(t(X) %*% W %*% X) %*% t(X) %*% W %*% y
+σ2.WLS <- sum(w*(y-(X %*% β.WLS))^2) / (nrow(X)-ncol(X)-1)
+β.WLS.SE <- diag(σ2.WLS * solve(t(X) %*% W %*% X)) %>% sqrt()
+
+data.frame(
+    "Estimate" = β.WLS, 
+    "Std.Error" = β.WLS.SE, 
+    "t.value" = β.WLS/β.WLS.SE
+)
+cat("Residual Standard Error: ", sqrt(σ2.WLS), "\n")
+w[1:6]
+```
+
+##### Step 3
+
+Next, we'll fit the Extended LM using `lm()`'s WLS functionality
+```{r}
+mod.wlsfit <- lm(y~x1, weights=1/x1)
+summary(mod.wlsfit)
+```
+
+and remark that the results are identical to the by-hand method. To confirm `lm()` used the proper weights, we see that `weights()` correctly returns the specified $w_{i} = \tfrac{1}{g^{2}(\bm{v}_{i})} = \tfrac{1}{x_{1i}}$:
+```{r}
+weights(mod.wlsfit)[1:6]
+```
+
+##### Step 4
+
+Lastly, we'll fit the Extended LM using `gls()`'s REML functionality. Before we do, remember: 
+
+
+
+When these two things
+So, we expect the results to be **identical**:
+\begin{aligned}
+    \WLS{\bm{β}} = \REML{\bm{β}}  \\
+    \text{SE}_{\text{WLS}}(\WLS{β})
+        = \text{SE}_{\text{REML}}(\REML{β})
+\end{aligned}
+
+In `R`, we have 
+```{r}
+mod.remlfit <- gls(y~x1, method="REML", weights=varFixed(~x1)) 
+summary(mod.remlfit)
+```
+
+and again, our results are identical. To confirm `gls()` used the proper weights, we use `varWeights()`: but, note that, unlike the `weights()` function, it returns $\sqrt{w_i}$'s 
+```{r, eval=F}
+varFixed(~x1) %>% Initialize(data=X) %>% varWeights() %>% extract(1:6)
+```
+
+:::
+
+
+
+
+
+<!--#########################################################################-->
+
+# Correction-Based Methods

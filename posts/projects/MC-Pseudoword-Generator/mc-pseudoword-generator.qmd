@@ -1,0 +1,130 @@
+---
+title: "Markov Chains & Lorem Ipsum"
+# date: "Spring, 2019"
+image: grf.png
+# description: "How do researchers generate high-dimensional normal variates for use in simulation studies?"
+# bibliography: "grf.bib"
+# nocite: "@*" 
+code-fold: false
+execute:
+  eval: false
+categories: [R, Simulation, Markov Chains]
+---
+<!--#########################################################################-->
+
+![](grf.png)
+
+```{r setup, eval=TRUE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, 
+                      warning = FALSE, cache = FALSE,
+                      fig.align = "center", out.width="75%")
+# options(width=85)
+
+# library(knitr)
+# library(kableExtra)
+
+# library(ggplot2)
+# library(tidyr)
+library(dplyr)
+library(stringr)# allows use of `str_replace_all`
+library(readr)  # allows use of `read_file`
+```
+
+<!--#########################################################################-->
+
+## Context
+
+As an undergrad, the *Stochastic Models and Simulation* class I took with professor Deena Schmidt played a huge role in nourishing my passion for probability and statistics. As a side-project for this class, I wondered if a naive model of human speech based on Markov Chains could be used to generate *pseudowords* akin to the [**Lorem Ipsum**](https://www.lipsum.com/) dummy text. Recently, I thought I should revisit the project and use it as a demonstration of the fun applications of stochastic processes. If you're not already familiar with Markov chains, I suggest starting (here)[https://healy.econ.ohio-state.edu/kcb/Ma103/Notes/Lecture16.pdf].
+
+## Motivation
+
+```{r}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(magrittr)
+```
+
+```{r}
+parseCorpus <- function(fname)
+{
+    fname %>% 
+        read_file() %>% 
+        tolower() %>% 
+        str_replace_all("[^ a-z]", "") %>% 
+        str_replace_all("\\s+", " ") %>% 
+        str_split("", simplify=T) %>% 
+        as.character() %>%   
+        return()
+}
+```
+
+```{r}
+createTPM <- function(corpus, order) 
+{
+    n <- length(corpus)
+    m <- order
+    corpus.df <- data.frame(matrix("", n-m, m+1))
+    for(i in 1:(m+1)) {
+        corpus.df[,i] <- corpus[i:(n+i-m-1)]
+    }
+    corpus.df %>% 
+        unite("from", 1:m, sep="") %>% 
+        {table(.[,1], .[,2])} %>% 
+        apply(1, \(row){
+            row/sum(row)
+        }) %>% 
+        t() %>% 
+        return()
+}
+```
+
+```{r}
+loremIpsum <- function(TPM, order, N=1000) 
+{
+    m <- order
+    fromTokens <- rownames(TPM)
+    destTokens <- colnames(TPM)
+    result <- 
+        sample(fromTokens, 1) %>% 
+        c(rep(" ",(N-m))) %>% 
+        paste0(collapse="")
+    for(i in m:N) {
+        fromState <- str_sub(result,(i-m+1),i)
+        str_sub(result,i+1,i+1) <- sample(destTokens, 1, prob=TPM[fromState,])
+    }
+    return(result)
+}
+```
+
+```{r}
+main <- function(fname, order, Nsim) 
+{
+    corpus <- parseCorpus(fname)
+
+    TPM <- createTPM(corpus, order)
+
+    # return(TPM)    
+    loremIpsum(TPM, order, Nsim)
+    # return(list(
+    #     "TPM" = TPM,
+    #     "loremIpsum" = loremIpsum(TPM, order, Nsim)
+    # ))
+}
+
+# "resources/EN-WarAndPeace.txt", 
+# "resources/EN-AliceInWonderland.txt", 
+# "resources/JP-Rashomon.txt", 
+# "resources/IT-DantesInferno.txt"
+
+main("resources/EN-WarAndPeace.txt", order=1, N=1000) 
+
+```
+
+## Methods
+
+## Simulation
+
+## Discussion
+
+
