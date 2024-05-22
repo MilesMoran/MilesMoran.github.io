@@ -115,7 +115,7 @@
   title: 'Survival Analysis (POP 509 Course Materials)'
   description: 'Princeton'
   author: 'Rodríguez, Germán'
-  categories: ['GLMs', 'GLMMs', 'Survival', 'R', 'Stata. Multivariate'] 
+  categories: ['GLMs', 'GLMMs', 'Survival', 'R', 'Stata', 'Multivariate'] 
 
 - path: 'https://grodri.github.io/glms/'
   image: 'posts/resources/icons/Princeton.png' 
@@ -137,4 +137,32 @@
   description: 'Universität Regensburg'
   author: 'Hartig, Florian'
   categories: ['GLMs', 'GLMMs', 'Autocorrelation', 'R', 'Simulation'] 
+
+- path: 'posts/resources/ETHZ-Kunsch-SpatialStats.pdf'
+  image: 'posts/resources/icons/ETHZ.png' 
+  title: 'Spatial Statistics'
+  description: 'ETHZ'
+  author: 'Künsch, Hans'
+  categories: ['LMs', 'R', 'Autocorrelation', 'Bayesian', 'Simulation', 'Spatial'] 
+
+- path: 'posts/resources/ETHZ-Kunsch-BayesianStats.pdf'
+  image: 'posts/resources/icons/ETHZ.png' 
+  title: 'Bayesian Statistics'
+  description: 'ETHZ'
+  author: 'Künsch, Hans'
+  categories: ['LMs', 'GLMs', 'Autocorrelation', 'Bayesian', 'Computation'] 
+
+- path: 'posts/resources/ETHZ-Dettling-TimeSeries.pdf'
+  image: 'posts/resources/icons/ETHZ.png' 
+  title: 'Applied Time Series Analysis'
+  description: 'ETHZ'
+  author: 'Dettling, Marcel'
+  categories: ['LMs', 'R', 'Autocorrelation', 'Data Viz', 'Heteroskedasticity', 'Multivariate', 'Simulation', 'Time Series'] 
+
+- path: 'posts/resources/Duke-Gallis-CorrelationStructures.pdf'
+  image: 'posts/resources/icons/Duke.png' 
+  title: 'Correlation Structures in Mixed Effects Models for Longitudinal Data Analysis'
+  description: 'Duke'
+  author: 'Gallis, John'
+  categories: ['LMs', 'SAS', 'Stata', 'Autocorrelation', 'DoE', 'Time Series'] 
 

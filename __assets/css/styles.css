@@ -20,10 +20,6 @@ mjx-container[display="true"] {
     height: 0 !important;
 }
 
-/*** reduce spacing above markdown lists ***/
-ul {
-    margin-top: -10px;
-}
 
 /******************************************************************************
 

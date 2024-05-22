@@ -4,7 +4,7 @@ const ALL_CATEGORIES = {
     "Model":    ["LMs", "LMMs", "GLMs", "GLMMs"], 
     "Length":   ["Quick-Read"], 
     "Language": ["R", "SAS", "Stata"],
-    "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial", "Simulation", "Multivariate", "Survival", "Bayesian", "Computation"],
+    "Topic":    ["Autocorrelation", "Contrasts", "Data Viz", "DoE", "Heteroskedasticity", "Multiple Comparisons", "Power Analysis", "Spatial", "Simulation", "Multivariate", "Survival", "Bayesian", "Computation", "Time Series"],
     "Other":    []
 };
 
